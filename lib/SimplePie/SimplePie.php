@@ -1360,6 +1360,7 @@ class SimplePie
 			}
 			if (!$xml_is_sane)
 			{
+				$this->error = 'XML is not sane!';
 				return false;
 			}
 		}
@@ -1397,10 +1398,14 @@ class SimplePie
 				}
 				$i++;
 			}
+			if (!$success) {
+				$this->error = 'Multifeed unsuccessful!';
+			}
 			return (bool) $success;
 		}
 		elseif ($this->feed_url === null && $this->raw_data === null)
 		{
+			$this->error = 'No feed_url/raw_data!';
 			return false;
 		}
 
@@ -1427,6 +1432,7 @@ class SimplePie
 				return $this->data['mtime'];
 			}
 			elseif ($fetched === false) {
+				$this->error = 'Not fetched!';
 				return false;
 			}
 
@@ -1748,7 +1754,7 @@ class SimplePie
 							// We need to unset this so that if SimplePie::set_file() has
 							// been called that object is untouched
 							unset($file);
-							$this->error = "A feed could not be found at `$this->feed_url`; the status code is `$copyStatusCode` and content-type is `$copyContentType`";
+							$this->error = "A feed could not be found at `$this->feed_url`; the status code is `$copyStatusCode` and content-type is `$copyContentType`" . print_r($file->headers, TRUE);
 							$this->registry->call('Misc', 'error', array($this->error, E_USER_NOTICE, __FILE__, __LINE__));
 							return false;
 						}

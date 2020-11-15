@@ -84,7 +84,7 @@ kbd {
 /*=== Images */
 img {
 	max-width: 100%;
-	height: auto;
+	max-height: 150px;
 }
 
 img.favicon {
@@ -752,7 +752,7 @@ input[type="search"] {
 }
 
 .content {
-	min-height: 20em;
+	// min-height: 20em;
 	margin: auto;
 	line-height: 1.7em;
 	word-wrap: break-word;
