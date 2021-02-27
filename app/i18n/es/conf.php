@@ -11,7 +11,7 @@ return array(
 		'keep_max' => 'Maximum number of articles to keep',	// TODO - Translation
 		'keep_min_by_feed' => 'Número mínimo de artículos a conservar por fuente',
 		'keep_period' => 'Maximum age of articles to keep',	// TODO - Translation
-		'keep_unreads' => 'Never delete unreads',	// TODO - Translation
+		'keep_unreads' => 'Never delete unread articles',	// TODO - Translation
 		'maintenance' => 'Maintenance',	// TODO - Translation
 		'optimize' => 'Optimizar la base de datos',
 		'optimize_help' => 'Ejecuta la optimización de vez en cuando para reducir el tamaño de la base de datos',
@@ -65,11 +65,22 @@ return array(
 		'_' => 'Consultas de usuario',
 		'deprecated' => 'Esta consulta ya no es válida. La categoría referenciada o fuente ha sido eliminada.',
 		'display' => 'Display user query results',	// TODO - Translation
-		'filter' => 'Filtro aplicado:',
+		'filter' => array(
+			'_' => 'Filtro aplicado:',
+			'categories' => 'Display by category',	// TODO - Translation
+			'feeds' => 'Display by feed',	// TODO - Translation
+			'order' => 'Sort by date',	// TODO - Translation
+			'search' => 'Expression',	// TODO - Translation
+			'state' => 'State',	// TODO - Translation
+			'tags' => 'Display by tag',	// TODO - Translation
+			'type' => 'Type',	// TODO - Translation
+		),
 		'get_all' => 'Mostrar todos los artículos',
 		'get_category' => 'Mostrar la categoría "%s"',
 		'get_favorite' => 'Mostrar artículos favoritos',
 		'get_feed' => 'Mostrar fuente "%s"',
+		'get_tag' => 'Display "%s" label',	// TODO - Translation
+		'name' => 'Name',	// TODO - Translation
 		'no_filter' => 'Sin filtro',
 		'none' => 'Todavía no has creado ninguna consulta de usuario.',
 		'number' => 'Consulta n° %d',
@@ -98,7 +109,7 @@ return array(
 	'reading' => array(
 		'_' => 'Lectura',
 		'after_onread' => 'Tras “marcar todo como leído”,',
-		'always_show_favorites' => 'Show all articles in favorites by default',	// TODO - Translation
+		'always_show_favorites' => 'Show all articles in favourites by default',	// TODO - Translation
 		'articles_per_page' => 'Número de artículos por página',
 		'auto_load_more' => 'Cargar más artículos al final de la página',
 		'auto_remove_article' => 'Ocultar artículos tras la lectura',
@@ -124,8 +135,10 @@ return array(
 			'all_articles' => 'Mostrar todos los artículos',
 			'all_categories' => 'All categories',	// TODO - Translation
 			'no_category' => 'No category',	// TODO - Translation
+			'remember_categories' => 'Remember open categories',	// TODO - Translation
 			'unread' => 'Mostrar solo pendientes',
 		),
+		'show_fav_unread_help' => 'Applies also on labels',	// TODO - Translation
 		'sides_close_article' => 'Pinchar fuera del área de texto del artículo lo cerrará',
 		'sort' => array(
 			'_' => 'Orden',
@@ -188,6 +201,7 @@ return array(
 		'skip_next_article' => 'Focus next without opening',	// TODO - Translation
 		'skip_previous_article' => 'Focus previous without opening',	// TODO - Translation
 		'title' => 'Atajos de teclado',
+		'toggle_media' => 'Play/pause media',	// TODO - Translation
 		'user_filter' => 'Acceso a filtros de usuario',
 		'user_filter_help' => 'Si solo hay un filtro de usuario, ese será el que se use. En caso contrario, los filtros están accesibles por su númeración.',
 		'views' => 'Views',	// TODO - Translation

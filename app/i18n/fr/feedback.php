@@ -36,6 +36,7 @@ return array(
 	),
 	'extensions' => array(
 		'already_enabled' => '%s est déjà activée',
+		'cannot_remove' => '%s ne peut pas être supprimée',
 		'disable' => array(
 			'ko' => '%s ne peut pas être désactivée. <a href="%s">Consulter les logs de FreshRSS</a> pour plus de détails.',
 			'ok' => '%s est désormais désactivée',
@@ -47,6 +48,7 @@ return array(
 		'no_access' => 'Vous n’avez aucun accès sur %s',
 		'not_enabled' => '%s n’est pas encore activée',
 		'not_found' => '%s n’existe pas',
+		'removed' => '%s a été supprimée',
 	),
 	'import_export' => array(
 		'export_no_zip_extension' => 'L’extension ZIP n’est pas présente sur votre serveur. Veuillez essayer d’exporter les fichiers un par un.',
@@ -106,6 +108,11 @@ return array(
 			'updated' => 'Le flux a été mis à jour',
 		),
 		'purge_completed' => 'Purge effectuée (%d articles supprimés).',
+	),
+	'tag' => array(
+		'created' => 'L’étiquette "%s" a été créée.',
+		'name_exists' => 'L’étiquette existe déjà.',
+		'renamed' => 'L’étiquette "%s" a été renommée en "%s".',
 	),
 	'update' => array(
 		'can_apply' => 'FreshRSS va maintenant être mis à jour vers la <strong>version %s</strong>.',

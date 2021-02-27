@@ -20,6 +20,7 @@ Server-side API compatible with Google Reader API layer 2
 * https://github.com/theoldreader/api
 * https://www.inoreader.com/developers/
 * https://feedhq.readthedocs.io/en/latest/api/index.html
+* https://github.com/bazqux/bazqux-api
 */
 
 require(__DIR__ . '/../../constants.php');
@@ -152,8 +153,12 @@ function authorizationToUser() {
 		if (count($headerAuthX) === 2) {
 			$user = $headerAuthX[0];
 			if (FreshRSS_user_Controller::checkUsername($user)) {
-				FreshRSS_Context::$user_conf = get_user_configuration($user);
+				FreshRSS_Context::initUser($user);
 				if (FreshRSS_Context::$user_conf == null) {
+					Minz_Log::warning('Invalid API user ' . $user . ': configuration cannot be found.');
+					unauthorized();
+				}
+				if (!FreshRSS_Context::$user_conf->enabled) {
 					Minz_Log::warning('Invalid API user ' . $user . ': configuration cannot be found.');
 					unauthorized();
 				}
@@ -174,7 +179,7 @@ function authorizationToUser() {
 
 function clientLogin($email, $pass) {	//http://web.archive.org/web/20130604091042/http://undoc.in/clientLogin.html
 	if (FreshRSS_user_Controller::checkUsername($email)) {
-		FreshRSS_Context::$user_conf = get_user_configuration($email);
+		FreshRSS_Context::initUser($email);
 		if (FreshRSS_Context::$user_conf == null) {
 			Minz_Log::warning('Invalid API user ' . $email . ': configuration cannot be found.');
 			unauthorized();
@@ -265,6 +270,29 @@ function tagList() {
 	exit();
 }
 
+function subscriptionExport() {
+	$user = Minz_Session::param('currentUser', '_');
+	$export_service = new FreshRSS_Export_Service($user);
+	list($filename, $content) = $export_service->generateOpml();
+	header('Content-Type: application/xml; charset=UTF-8');
+	header('Content-disposition: attachment; filename="' . $filename . '"');
+	echo $content;
+	exit();
+}
+
+function subscriptionImport($opml) {
+	$user = Minz_Session::param('currentUser', '_');
+	$importService = new FreshRSS_Import_Service($user);
+	$ok = $importService->importOpml($opml);
+	if ($ok) {
+		list($nbUpdatedFeeds, $feed, $nbNewArticles) = FreshRSS_feed_Controller::actualizeFeed(0, '', true);
+		invalidateHttpCache($user);
+		exit('OK');
+	} else {
+		badRequest();
+	}
+}
+
 function subscriptionList() {
 	header('Content-Type: application/json; charset=UTF-8');
 
@@ -339,7 +367,7 @@ function subscriptionEdit($streamNames, $titles, $action, $add = '', $remove = '
 	for ($i = count($streamNames) - 1; $i >= 0; $i--) {
 		$streamUrl = $streamNames[$i];	//feed/http://example.net/sample.xml	;	feed/338
 		if (strpos($streamUrl, 'feed/') === 0) {
-			$streamUrl = substr($streamUrl, 5);
+			$streamUrl = preg_replace('%^(feed/)+%', '', $streamUrl);
 			$feedId = 0;
 			if (ctype_digit($streamUrl)) {
 				if ($action === 'subscribe') {
@@ -392,10 +420,15 @@ function subscriptionEdit($streamNames, $titles, $action, $add = '', $remove = '
 function quickadd($url) {
 	try {
 		$url = htmlspecialchars($url, ENT_COMPAT, 'UTF-8');
+		if (substr($url, 0, 5) === 'feed/') {
+			$url = substr($url, 5);
+		}
 		$feed = FreshRSS_feed_Controller::addFeed($url);
 		exit(json_encode(array(
 				'numResults' => 1,
-				'streamId' => $feed->id(),
+				'query' => $feed->url(),
+				'streamId' => 'feed/' . $feed->id(),
+				'streamName' => $feed->name(),
 			), JSON_OPTIONS));
 	} catch (Exception $e) {
 		Minz_Log::error('quickadd error: ' . $e->getMessage(), API_LOG);
@@ -497,6 +530,9 @@ function entriesToArray($entries) {
 			'published' => $entry->date(true),
 			'title' => escapeToUnicodeAlternative($entry->title(), false),
 			'summary' => array('content' => $entry->content()),
+			'canonical' => array(
+				array('href' => htmlspecialchars_decode($entry->link(), ENT_QUOTES)),
+			),
 			'alternate' => array(
 				array('href' => htmlspecialchars_decode($entry->link(), ENT_QUOTES)),
 			),
@@ -663,7 +699,7 @@ function streamContents($path, $include_target, $start_time, $stop_time, $count,
 	if (count($entries) >= $count) {
 		$entry = end($entries);
 		if ($entry != false) {
-			$response['continuation'] = $entry->id();
+			$response['continuation'] = '' . $entry->id();
 		}
 	}
 
@@ -719,7 +755,7 @@ function streamContentsItemsIds($streamId, $start_time, $stop_time, $count, $ord
 	if (count($ids) >= $count) {
 		$id = end($ids);
 		if ($id != false) {
-			$response['continuation'] = $id;
+			$response['continuation'] = '' . $id;
 		}
 	}
 
@@ -903,6 +939,7 @@ function markAllAsRead($streamId, $olderThanId) {
 }
 
 $pathInfo = empty($_SERVER['PATH_INFO']) ? '' : urldecode($_SERVER['PATH_INFO']);
+$pathInfo = preg_replace('%^(/api)?(/greader\.php)?%', '', $pathInfo);	//Discard common errors
 if ($pathInfo == '') {
 	exit('OK');
 }
@@ -911,10 +948,7 @@ if (count($pathInfos) < 3) {
 	badRequest();
 }
 
-Minz_Configuration::register('system',
-	DATA_PATH . '/config.php',
-	FRESHRSS_PATH . '/config.default.php');
-FreshRSS_Context::$system_conf = Minz_Configuration::get('system');
+FreshRSS_Context::initSystem();
 
 //Minz_Log::debug('----------------------------------------------------------------', API_LOG);
 //Minz_Log::debug(debugInfo(), API_LOG);
@@ -925,33 +959,25 @@ if (!FreshRSS_Context::$system_conf->api_enabled) {
 	checkCompatibility();
 }
 
-ini_set('session.use_cookies', '0');
-register_shutdown_function('session_destroy');
-Minz_Session::init('FreshRSS');
+Minz_Session::init('FreshRSS', true);
 
-$user = $pathInfos[1] === 'accounts' ? '' : authorizationToUser();
-FreshRSS_Context::$user_conf = null;
-if ($user !== '') {
-	FreshRSS_Context::$user_conf = get_user_configuration($user);
+if ($pathInfos[1] !== 'accounts') {
+	authorizationToUser();
+}
+if (FreshRSS_Context::$user_conf != null) {
+	Minz_Translate::init(FreshRSS_Context::$user_conf->language);
 	Minz_ExtensionManager::init();
-	if (FreshRSS_Context::$user_conf != null) {
-		Minz_Translate::init(FreshRSS_Context::$user_conf->language);
-		Minz_ExtensionManager::enableByList(FreshRSS_Context::$user_conf->extensions_enabled);
-	} else {
-		Minz_Translate::init();
-	}
+	Minz_ExtensionManager::enableByList(FreshRSS_Context::$user_conf->extensions_enabled);
 } else {
 	Minz_Translate::init();
 }
-
-Minz_Session::_param('currentUser', $user);
 
 if ($pathInfos[1] === 'accounts') {
 	if (($pathInfos[2] === 'ClientLogin') && isset($_REQUEST['Email']) && isset($_REQUEST['Passwd'])) {
 		clientLogin($_REQUEST['Email'], $_REQUEST['Passwd']);
 	}
 } elseif ($pathInfos[1] === 'reader' && $pathInfos[2] === 'api' && isset($pathInfos[3]) && $pathInfos[3] === '0' && isset($pathInfos[4])) {
-	if ($user == '') {
+	if (Minz_Session::param('currentUser', '') == '') {
 		unauthorized();
 	}
 	$timestamp = isset($_GET['ck']) ? intval($_GET['ck']) : 0;	//ck=[unix timestamp] : Use the current Unix time here, helps Google with caching.
@@ -979,8 +1005,15 @@ if ($pathInfos[1] === 'accounts') {
 			if (!ctype_digit($continuation)) {
 				$continuation = '';
 			}
-			if (isset($pathInfos[5]) && $pathInfos[5] === 'contents' && isset($pathInfos[6])) {
-				if (isset($pathInfos[7])) {
+			if (isset($pathInfos[5]) && $pathInfos[5] === 'contents') {
+				if (!isset($pathInfos[6]) && isset($_GET['s'])) {
+					// Compatibility BazQux API https://github.com/bazqux/bazqux-api#fetching-streams
+					$streamIdInfos = explode('/', $_GET['s']);
+					foreach ($streamIdInfos as $streamIdInfo) {
+						$pathInfos[] = $streamIdInfo;
+					}
+				}
+				if (isset($pathInfos[6]) && isset($pathInfos[7])) {
 					if ($pathInfos[6] === 'feed') {
 						$include_target = $pathInfos[7];
 						if ($include_target != '' && !ctype_digit($include_target)) {
@@ -1005,7 +1038,7 @@ if ($pathInfos[1] === 'accounts') {
 							streamContents($pathInfos[8], $include_target, $start_time, $stop_time, $count, $order, $filter_target, $exclude_target, $continuation);
 						}
 					}
-				} else {	//EasyRSS
+				} else {	//EasyRSS, FeedMe
 					$include_target = '';
 					streamContents('reading-list', $include_target, $start_time, $stop_time, $count, $order, $filter_target, $exclude_target, $continuation);
 				}
@@ -1032,6 +1065,14 @@ if ($pathInfos[1] === 'accounts') {
 		case 'subscription':
 			if (isset($pathInfos[5])) {
 				switch ($pathInfos[5]) {
+					case 'export':
+						subscriptionExport();
+						break;
+					case 'import':
+						if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST' && $ORIGINAL_INPUT != '') {
+							subscriptionImport($ORIGINAL_INPUT);
+						}
+						break;
 					case 'list':
 						$output = isset($_GET['output']) ? $_GET['output'] : '';
 						if ($output !== 'json') notImplemented();
@@ -1052,8 +1093,8 @@ if ($pathInfos[1] === 'accounts') {
 						}
 						break;
 					case 'quickadd':	//https://github.com/theoldreader/api
-						if (isset($_GET['quickadd'])) {
-							quickadd($_GET['quickadd']);
+						if (isset($_REQUEST['quickadd'])) {
+							quickadd($_REQUEST['quickadd']);
 						}
 						break;
 				}

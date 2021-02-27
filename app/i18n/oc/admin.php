@@ -70,10 +70,6 @@ return array(
 			'nok' => 'Impossible de trobar la bibliotèca recomandada mbstring per Unicode.',
 			'ok' => 'Avètz la bibliotèca recomandada mbstring per Unicode.',
 		),
-		'minz' => array(
-			'nok' => 'Avètz pas la bibliotèca Minz.',
-			'ok' => 'Avètz la bibliotèca Minz.',
-		),
 		'pcre' => array(
 			'nok' => 'Impossible de trobar una bibliotèca per las expressions regulara (php-pcre).',
 			'ok' => 'Avètz la bibliotèca per las expressions regularas (PCRE).',
@@ -190,10 +186,11 @@ return array(
 		'database_size' => 'Talha basa de donadas',
 		'delete_users' => 'Suprimir un utilizaire',
 		'email' => 'Adreça electronica',
+		'enabled' => 'Activat',
 		'feed_count' => 'Flux',
 		'is_admin' => 'Es admin',
 		'language' => 'Lenga',
-		'last_user_activity' => 'Last user activity',	// TODO - Translation
+		'last_user_activity' => 'Darrièra activitat utilizaire',
 		'list' => 'Lista dels utilizaires',
 		'number' => '%d compte ja creat',
 		'numbers' => '%d comptes ja creats',

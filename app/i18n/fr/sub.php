@@ -1,6 +1,7 @@
 <?php
 
 return array(
+	'add' => 'L\'ajout de flux et de catégories se fait désormais <a href=\'%s\'>ici</a>. Il est possible d\'y accéder depuis le menu de gauche ou depuis l\'icône ✚ présente sur la page principale.',
 	'api' => array(
 		'documentation' => 'Copier l’URL suivante dans l’outil qui utilisera l’API.',
 		'title' => 'API',	// TODO - Translation
@@ -16,7 +17,6 @@ return array(
 		'archiving' => 'Archivage',
 		'empty' => 'Catégorie vide',
 		'information' => 'Informations',
-		'new' => 'Nouvelle catégorie',
 		'position' => 'Position d’affichage',
 		'position_help' => 'Pour contrôler l’ordre de tri des catégories',
 		'title' => 'Titre',
@@ -33,6 +33,14 @@ return array(
 			'username' => 'Identifiant HTTP',
 		),
 		'clear_cache' => 'Toujours vider le cache',
+		'content_action' => array(
+			'_' => 'Action à effectuer pour la réception du contenu des articles',
+			'append' => 'Ajouter après le contenu existant',
+			'prepend' => 'Ajouter avant le contenu existant',
+			'replace' => 'Remplacer le contenu existant',
+		),
+		'css_cookie' => 'Utiliser des cookies pour la réception du contenu des articles',
+		'css_cookie_help' => 'Exemple : <kbd>foo=bar; gdpr_consent=true; cookie=value</kbd>',
 		'css_help' => 'Permet de récupérer les flux tronqués (attention, demande plus de temps !)',
 		'css_path' => 'Sélecteur CSS des articles sur le site d’origine',
 		'description' => 'Description',
@@ -61,6 +69,8 @@ return array(
 			'main_stream' => 'Afficher dans le flux principal',
 			'normal' => 'Afficher dans sa catégorie',
 		),
+		'proxy' => 'Utiliser un proxy pour télécharger ce flux',
+		'proxy_help' => 'Sélectionner un protocole (ex : SOCKS5) et entrer l’adresse du proxy (ex. : <kbd>127.0.0.1:1080</kbd>)',
 		'selector_preview' => array(
 			'show_raw' => 'Afficher le code source',
 			'show_rendered' => 'Afficher le contenu',
@@ -102,14 +112,28 @@ return array(
 		'title' => 'Importer / exporter',
 	),
 	'menu' => array(
+		'add' => 'Ajouter un flux/une catégorie',
+		'add_feed' => 'Ajouter un flux',
 		'bookmark' => 'S’abonner (bookmark FreshRSS)',
 		'import_export' => 'Importer / exporter',
+		'label_management' => 'Gestion des étiquettes',
 		'subscription_management' => 'Gestion des abonnements',
 		'subscription_tools' => 'Outils d’abonnement',
 	),
+	'tag' => array(
+		'name' => 'Nom',
+		'new_name' => 'Ancien nom',
+		'old_name' => 'Nouveau nom',
+	),
 	'title' => array(
 		'_' => 'Gestion des abonnements',
+		'add' => 'Ajouter un flux/une catégorie',
+		'add_category' => 'Ajouter une catégorie',
+		'add_feed' => 'Ajouter un flux',
+		'add_label' => 'Ajouter une étiquette',
+		'delete_label' => 'Supprimer une étiquette',
 		'feed_management' => 'Gestion des flux RSS',
+		'rename_label' => 'Renommer une étiquette',
 		'subscription_tools' => 'Outils d’abonnement',
 	),
 );

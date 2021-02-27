@@ -70,10 +70,6 @@ return array(
 			'nok' => 'Não foi possível encontrar a biblioteca recomendada para Unicode (mbstring).',
 			'ok' => 'Você tem a biblioteca recomendada para Unicode (mbstring).',
 		),
-		'minz' => array(
-			'nok' => 'Não foi possível encontrar o framework Minz.',
-			'ok' => 'Você tem o framework Minz.',
-		),
 		'pcre' => array(
 			'nok' => 'Não foi possível encontrar uma biblioteca necessário para expressões regulares (php-pcre).',
 			'ok' => 'Você tem a biblioteca necessária para expressões regulares (php-pcre).',
@@ -190,6 +186,7 @@ return array(
 		'database_size' => 'Tamanho do banco de dados',
 		'delete_users' => 'Deletar usuário',
 		'email' => 'Endereço de email',
+		'enabled' => 'Enabled',	// TODO - Translation
 		'feed_count' => 'Feeds',
 		'is_admin' => 'É administrador',
 		'language' => 'Idioma',

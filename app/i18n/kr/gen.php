@@ -3,6 +3,7 @@
 return array(
 	'action' => array(
 		'actualize' => '새 글 가져오기',
+		'add' => 'Add',	// TODO - Translation
 		'back' => '← Go back',	// TODO - Translation
 		'back_to_rss_feeds' => '← RSS 피드로 돌아가기',
 		'cancel' => '취소',
@@ -14,12 +15,14 @@ return array(
 		'export' => '내보내기',
 		'filter' => '해당하는 글 보기',
 		'import' => '불러오기',
+		'load_default_shortcuts' => 'Load default shortcuts',	// TODO - Translation
 		'manage' => '관리',
 		'mark_favorite' => '즐겨찾기에 등록',
 		'mark_read' => '읽음으로 표시',
 		'promote' => 'Promote',	// TODO - Translation
 		'purge' => 'Purge',	// TODO - Translation
 		'remove' => '삭제',
+		'rename' => 'Rename',	// TODO - Translation
 		'see_website' => '웹사이트 열기',
 		'submit' => '설정 저장',
 		'truncate' => '모든 글 삭제',
@@ -127,6 +130,7 @@ return array(
 		'cz' => 'Čeština',
 		'de' => 'Deutsch',
 		'en' => 'English',
+		'en-us' => 'English (United States)',
 		'es' => 'Español',
 		'fr' => 'Français',
 		'he' => 'עברית',
@@ -134,9 +138,10 @@ return array(
 		'kr' => '한국어',
 		'nl' => 'Nederlands',
 		'oc' => 'Occitan',
+		'pl' => 'Polski',
 		'pt-br' => 'Português (Brasil)',
 		'ru' => 'Русский',
-		'sk' => 'Slovenčina',	// TODO - Translation
+		'sk' => 'Slovenčina',
 		'tr' => 'Türkçe',
 		'zh-cn' => '简体中文',
 	),
@@ -180,6 +185,7 @@ return array(
 	'share' => array(
 		'Known' => 'Known based sites',
 		'blogotext' => 'Blogotext',
+		'clipboard' => 'Clipboard',	// TODO - Translation
 		'diaspora' => 'Diaspora*',
 		'email' => '메일',
 		'facebook' => 'Facebook',

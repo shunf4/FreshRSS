@@ -6,6 +6,8 @@
 			!FreshRSS_Context::isStateEnabled(FreshRSS_Entry::STATE_READ)) {
 		$class = ' state_unread';
 	}
+
+	$state_filter = FreshRSS_Context::$user_conf->show_fav_unread ? '&state=3' : '';
 ?>
 
 <div class="aside aside_feed<?= $class ?>" id="aside_feed">
@@ -14,7 +16,7 @@
 	<?php if (FreshRSS_Auth::hasAccess()) { ?>
 	<div class="stick configure-feeds">
 		<a id="btn-subscription" class="btn btn-important" href="<?= _url('subscription', 'index') ?>"><?= _t('index.menu.subscription') ?></a>
-		<a id="btn-importExport" class="btn btn-important" href="<?= _url('importExport', 'index') ?>"><?= _i('import') ?></a>
+		<a id="btn-add" class="btn btn-important" href="<?= _url('subscription', 'add') ?>"><?= _i('add-white') ?></a>
 	</div>
 	<?php } elseif (FreshRSS_Auth::accessNeedsLogin()) { ?>
 	<a href="<?= _url('index', 'about') ?>"><?= _t('index.menu.about') ?></a>
@@ -31,14 +33,8 @@
 
 		<li class="tree-folder category favorites<?= FreshRSS_Context::isCurrentGet('s') ? ' active' : '' ?>">
 			<div class="tree-folder-title">
-				<?php
-					$url_starred = _url('index', $actual_view, 'get', 's');
-					if (FreshRSS_Context::$user_conf->show_fav_unread) {
-						$url_starred = $url_starred . '&state=3';
-					}
-				?>
 				<?= _i('bookmark') ?>
-				<a class="title" data-unread="<?= format_number(FreshRSS_Context::$total_starred['unread']) ?>" href="<?= $url_starred ?>">
+				<a class="title" data-unread="<?= format_number(FreshRSS_Context::$total_starred['unread']) ?>" href="<?= _url('index', $actual_view, 'get', 's') . $state_filter ?>">
 					<?= _t('index.menu.favorites', format_number(FreshRSS_Context::$total_starred['all'])) ?>
 				</a>
 			</div>
@@ -46,12 +42,12 @@
 
 		<?php
 			$t_active = FreshRSS_Context::isCurrentGet('T');
-			$t_show = ($t_active && FreshRSS_Context::$user_conf->display_categories === 'active') || FreshRSS_Context::$user_conf->display_categories === 'all';
+			$t_show = ($t_active && in_array(FreshRSS_Context::$user_conf->display_categories, [ 'active', 'remember' ])) || FreshRSS_Context::$user_conf->display_categories === 'all';
 		?>
-		<li class="tree-folder category tags<?= $t_active ? ' active' : '' ?>">
+		<li id="tags" class="tree-folder category tags<?= $t_active ? ' active' : '' ?>">
 			<div class="tree-folder-title">
 				<a class="dropdown-toggle" href="#"><?= _i($t_active ? 'up' : 'down') ?></a>
-				<a class="title" data-unread="<?= format_number($this->nbUnreadTags) ?>" href="<?= _url('index', $actual_view, 'get', 'T') ?>"><?= _t('index.menu.tags') ?></a>
+				<a class="title" data-unread="<?= format_number($this->nbUnreadTags) ?>" href="<?= _url('index', $actual_view, 'get', 'T') . $state_filter ?>"><?= _t('index.menu.tags') ?></a>
 			</div>
 			<ul class="tree-folder-items<?= $t_show ? ' active' : '' ?>">
 				<?php
@@ -63,7 +59,7 @@
 						<a class="dropdown-toggle"><?= _i('configure') ?></a>
 						<?php /* tag_config_template */ ?>
 					</div>
-					<?= FreshRSS_Themes::alt('label') ?> <a class="item-title" data-unread="<?= format_number($tag->nbUnread()) ?>" href="<?= _url('index', $actual_view, 'get', 't_' . $tag->id()) ?>"><?= $tag->name() ?></a>
+					<?= FreshRSS_Themes::alt('label') ?> <a class="item-title" data-unread="<?= format_number($tag->nbUnread()) ?>" href="<?= _url('index', $actual_view, 'get', 't_' . $tag->id()) . $state_filter ?>"><?= $tag->name() ?></a>
 				</li>
 				<?php endforeach; ?>
 			</ul>
@@ -75,9 +71,9 @@
 				$position = $cat->attributes('position');
 				if (!empty($feeds)) {
 					$c_active = FreshRSS_Context::isCurrentGet('c_' . $cat->id());
-					$c_show = ($c_active && FreshRSS_Context::$user_conf->display_categories === 'active') || FreshRSS_Context::$user_conf->display_categories === 'all';
+					$c_show = ($c_active && in_array(FreshRSS_Context::$user_conf->display_categories, [ 'active', 'remember' ])) || FreshRSS_Context::$user_conf->display_categories === 'all';
 		?>
-		<li class="tree-folder category<?= $c_active ? ' active' : '' ?>"<?= null === $position ? '' : "data-position='$position'" ?> data-unread="<?= $cat->nbNotRead() ?>">
+		<li id="c_<?= $cat->id() ?>" class="tree-folder category<?= $c_active ? ' active' : '' ?>"<?= null === $position ? '' : "data-position='$position'" ?> data-unread="<?= $cat->nbNotRead() ?>">
 			<div class="tree-folder-title">
 				<a class="dropdown-toggle" href="#"><?= _i($c_show ? 'up' : 'down') ?></a>
 				<a class="title<?= $cat->hasFeedsWithError() ? ' error' : '' ?>" data-unread="<?= format_number($cat->nbNotRead()) ?>" href="<?= _url('index', $actual_view, 'get', 'c_' . $cat->id()) ?>"><?= $cat->name() ?></a>

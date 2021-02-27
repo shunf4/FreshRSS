@@ -9,9 +9,9 @@ return array(
 		'keep_favourites' => 'Never delete favourites',	// TODO - Translation
 		'keep_labels' => 'Never delete labels',	// TODO - Translation
 		'keep_max' => 'Maximum number of articles to keep',	// TODO - Translation
-		'keep_min_by_feed' => 'Minimum number of articles to keep by feed',	// TODO - Translation
+		'keep_min_by_feed' => 'Minimum number of articles to keep per feed',	// TODO - Translation
 		'keep_period' => 'Maximum age of articles to keep',	// TODO - Translation
-		'keep_unreads' => 'Never delete unreads',	// TODO - Translation
+		'keep_unreads' => 'Never delete unread articles',	// TODO - Translation
 		'maintenance' => 'Maintenance',	// TODO - Translation
 		'optimize' => 'מיטוב בסיס הנתונים',
 		'optimize_help' => 'ביצוע לעיתים קרובות על מנת למטב את בסיס הנתונים',
@@ -65,11 +65,22 @@ return array(
 		'_' => 'שאילתות',
 		'deprecated' => 'שאילתה זו אינה בתוקף יותר, הפיד או הקטגוריה לייחוס נמחקו.',
 		'display' => 'Display user query results',	// TODO - Translation
-		'filter' => 'מסננים בשימוש:',
+		'filter' => array(
+			'_' => 'מסננים בשימוש:',
+			'categories' => 'Display by category',	// TODO - Translation
+			'feeds' => 'Display by feed',	// TODO - Translation
+			'order' => 'Sort by date',	// TODO - Translation
+			'search' => 'Expression',	// TODO - Translation
+			'state' => 'State',	// TODO - Translation
+			'tags' => 'Display by tag',	// TODO - Translation
+			'type' => 'Type',	// TODO - Translation
+		),
 		'get_all' => 'הצגת כל המאמרים',
 		'get_category' => 'הצגת קטגוריה "%s"',
 		'get_favorite' => 'הצגת מאמרים מועדפים',
 		'get_feed' => 'הצגת הזנה %s',
+		'get_tag' => 'Display "%s" label',	// TODO - Translation
+		'name' => 'Name',	// TODO - Translation
 		'no_filter' => 'ללא סינון',
 		'none' => 'אף שאילתה לא נוצרה עדיין.',
 		'number' => 'שאילתה מספר °%d',
@@ -98,7 +109,7 @@ return array(
 	'reading' => array(
 		'_' => 'קריאה',
 		'after_onread' => 'לאחר “סימון הכל כנקרא”,',
-		'always_show_favorites' => 'Show all articles in favorites by default',	// TODO - Translation
+		'always_show_favorites' => 'Show all articles in favourites by default',	// TODO - Translation
 		'articles_per_page' => 'מספר המאמרים בעמוד',
 		'auto_load_more' => 'טעינת המאמר הבא סוף העמוד',
 		'auto_remove_article' => 'Hide articles after reading',	// TODO - Translation
@@ -124,8 +135,10 @@ return array(
 			'all_articles' => 'הצגת כל המאמרים',
 			'all_categories' => 'All categories',	// TODO - Translation
 			'no_category' => 'No category',	// TODO - Translation
+			'remember_categories' => 'Remember open categories',	// TODO - Translation
 			'unread' => 'הצגת מאמרים שלא נקראו בלבד',
 		),
+		'show_fav_unread_help' => 'Applies also on labels',	// TODO - Translation
 		'sides_close_article' => 'Clicking outside of article text area closes the article',	// TODO - Translation
 		'sort' => array(
 			'_' => 'סדר המיון',
@@ -188,6 +201,7 @@ return array(
 		'skip_next_article' => 'Focus next without opening',	// TODO - Translation
 		'skip_previous_article' => 'Focus previous without opening',	// TODO - Translation
 		'title' => 'קיצורי דרך',
+		'toggle_media' => 'Play/pause media',	// TODO - Translation
 		'user_filter' => 'גישה למססנים',
 		'user_filter_help' => 'אם יש רק מזנן אחד הוא יהיה בשימוש. אחרת המסננים ישמשו על בסיס המספר שלהם.',
 		'views' => 'Views',	// TODO - Translation

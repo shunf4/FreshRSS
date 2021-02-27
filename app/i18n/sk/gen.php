@@ -3,6 +3,7 @@
 return array(
 	'action' => array(
 		'actualize' => 'Aktualizovať',
+		'add' => 'Add',	// TODO - Translation
 		'back' => '← Go back',	// TODO - Translation
 		'back_to_rss_feeds' => '← Späť na vaše RSS kanály',
 		'cancel' => 'Zrušiť',
@@ -14,12 +15,14 @@ return array(
 		'export' => 'Exportovať',
 		'filter' => 'Filtrovať',
 		'import' => 'Importovať',
+		'load_default_shortcuts' => 'Load default shortcuts',	// TODO - Translation
 		'manage' => 'Spravovať',
 		'mark_favorite' => 'Označiť ako obľúbené',
 		'mark_read' => 'Označiť ako prečítané',
 		'promote' => 'Promote',	// TODO - Translation
 		'purge' => 'Purge',	// TODO - Translation
 		'remove' => 'Odstrániť',
+		'rename' => 'Rename',	// TODO - Translation
 		'see_website' => 'Zobraziť webovú stránku',
 		'submit' => 'Poslať',
 		'truncate' => 'Vymazať všetky články',
@@ -127,6 +130,7 @@ return array(
 		'cz' => 'Čeština',
 		'de' => 'Deutsch',
 		'en' => 'English',
+		'en-us' => 'English (United States)',
 		'es' => 'Español',
 		'fr' => 'Français',
 		'he' => 'עברית',
@@ -134,6 +138,7 @@ return array(
 		'kr' => '한국어',
 		'nl' => 'Nederlands',
 		'oc' => 'Occitan',
+		'pl' => 'Polski',
 		'pt-br' => 'Português (Brasil)',
 		'ru' => 'Русский',
 		'sk' => 'Slovenčina',
@@ -145,7 +150,7 @@ return array(
 		'admin' => 'Administrácia',
 		'archiving' => 'Archivácia',
 		'authentication' => 'Prihlásenie',
-		'check_install' => 'Kontroloa inštalácie',
+		'check_install' => 'Kontrola inštalácie',
 		'configuration' => 'Nastavenia',
 		'display' => 'Zobrazenie',
 		'extensions' => 'Rozšírenia',
@@ -180,6 +185,7 @@ return array(
 	'share' => array(
 		'Known' => 'Stránky založené na Known',
 		'blogotext' => 'Blogotext',
+		'clipboard' => 'Clipboard',	// TODO - Translation
 		'diaspora' => 'Diaspora*',
 		'email' => 'E-mail',
 		'facebook' => 'Facebook',

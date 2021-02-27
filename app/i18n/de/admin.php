@@ -70,10 +70,6 @@ return array(
 			'nok' => 'Ihnen fehlt die mbstring-Bibliothek für Unicode.',
 			'ok' => 'Sie haben die empfohlene mbstring-Bliothek für Unicode.',
 		),
-		'minz' => array(
-			'nok' => 'Ihnen fehlt das Minz-Framework.',
-			'ok' => 'Sie haben das Minz-Framework.',
-		),
 		'pcre' => array(
 			'nok' => 'Ihnen fehlt eine benötigte Bibliothek für reguläre Ausdrücke (php-pcre).',
 			'ok' => 'Sie haben die benötigte Bibliothek für reguläre Ausdrücke (PCRE).',
@@ -107,13 +103,13 @@ return array(
 	),
 	'extensions' => array(
 		'author' => 'Autor',
-		'community' => 'Verfügbare Community Erweiterungen',
+		'community' => 'Verfügbare Community-Erweiterungen',
 		'description' => 'Beschreibungen',
 		'disabled' => 'Deaktiviert',
 		'empty_list' => 'Es gibt keine installierte Erweiterung.',
 		'enabled' => 'Aktiviert',
 		'latest' => 'Installiert',
-		'name' => 'Name',	// TODO - Translation
+		'name' => 'Name',
 		'no_configure_view' => 'Diese Erweiterung kann nicht konfiguriert werden.',
 		'system' => array(
 			'_' => 'System-Erweiterungen',
@@ -122,7 +118,7 @@ return array(
 		'title' => 'Erweiterungen',
 		'update' => 'Update verfügbar',
 		'user' => 'Benutzer-Erweiterungen',
-		'version' => 'Version',	// TODO - Translation
+		'version' => 'Version',
 	),
 	'stats' => array(
 		'_' => 'Statistiken',
@@ -135,7 +131,7 @@ return array(
 		'entry_per_hour' => 'Pro Stunde (Durchschnitt: %.2f Nachrichten)',
 		'entry_per_month' => 'Pro Monat (Durchschnitt: %.2f Nachrichten)',
 		'entry_repartition' => 'Einträge-Verteilung',
-		'feed' => 'Feed',	// TODO - Translation
+		'feed' => 'Feed',
 		'feed_per_category' => 'Feeds pro Kategorie',
 		'idle' => 'Inaktive Feeds',
 		'main' => 'Haupt-Statistiken',
@@ -158,7 +154,7 @@ return array(
 	),
 	'system' => array(
 		'_' => 'Systemeinstellungen',
-		'auto-update-url' => 'Auto-update URL',
+		'auto-update-url' => 'Auto-Update URL',
 		'cookie-duration' => array(
 			'help' => 'in Sekunden',
 			'number' => 'Eingeloggt bleiben für',
@@ -168,7 +164,7 @@ return array(
 		'max-categories' => 'Anzahl erlaubter Kategorien pro Benutzer',
 		'max-feeds' => 'Anzahl erlaubter Feeds pro Benutzer',
 		'registration' => array(
-			'help' => '0 meint, dass es kein Account Limit gibt',
+			'help' => '0 heißt, dass es kein Account Limit gibt',
 			'number' => 'Maximale Anzahl von Accounts',
 		),
 	),
@@ -182,19 +178,20 @@ return array(
 		'title' => 'System aktualisieren',
 	),
 	'user' => array(
-		'admin' => 'Administrator',	// TODO - Translation
-		'article_count' => 'Articles',	// TODO - Translation
+		'admin' => 'Administrator',
+		'article_count' => 'Artikel',
 		'articles_and_size' => '%s Artikel (%s)',
-		'back_to_manage' => '← Return to user list',	// TODO - Translation
+		'back_to_manage' => '← Zurück zur Benutzerliste',
 		'create' => 'Neuen Benutzer erstellen',
-		'database_size' => 'Database size',	// TODO - Translation
+		'database_size' => 'Datenbankgröße',
 		'delete_users' => 'Lösche Benutzer',
-		'email' => 'Email address',	// TODO - Translation
-		'feed_count' => 'Feeds',	// TODO - Translation
-		'is_admin' => 'Is admin',	// TODO - Translation
+		'email' => 'E-Mail-Adresse',
+		'enabled' => 'Aktiviert',
+		'feed_count' => 'Feeds',
+		'is_admin' => 'Ist Administrator',
 		'language' => 'Sprache',
-		'last_user_activity' => 'Last user activity',	// TODO - Translation
-		'list' => 'User list',	// TODO - Translation
+		'last_user_activity' => 'Letzte Benutzeraktivität',
+		'list' => 'Benutzerliste',
 		'number' => 'Es wurde bis jetzt %d Account erstellt',
 		'numbers' => 'Es wurden bis jetzt %d Accounts erstellt',
 		'password_form' => 'Passwort<br /><small>(für die Anmeldemethode per Webformular)</small>',

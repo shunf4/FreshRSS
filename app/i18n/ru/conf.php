@@ -9,9 +9,9 @@ return array(
 		'keep_favourites' => 'Never delete favourites',	// TODO - Translation
 		'keep_labels' => 'Never delete labels',	// TODO - Translation
 		'keep_max' => 'Maximum number of articles to keep',	// TODO - Translation
-		'keep_min_by_feed' => 'Minimum number of articles to keep by feed',	// TODO - Translation
+		'keep_min_by_feed' => 'Minimum number of articles to keep per feed',	// TODO - Translation
 		'keep_period' => 'Maximum age of articles to keep',	// TODO - Translation
-		'keep_unreads' => 'Never delete unreads',	// TODO - Translation
+		'keep_unreads' => 'Never delete unread articles',	// TODO - Translation
 		'maintenance' => 'Maintenance',	// TODO - Translation
 		'optimize' => 'Оптимизировать базу данных',
 		'optimize_help' => 'To do occasionally to reduce the size of the database',
@@ -42,10 +42,10 @@ return array(
 		'title' => 'Display',	// TODO - Translation
 		'width' => array(
 			'content' => 'Content width',	// TODO - Translation
-			'large' => 'Large',	// TODO - Translation
+			'large' => 'Wide',	// TODO - Translation
 			'medium' => 'Medium',	// TODO - Translation
-			'no_limit' => 'No limit',	// TODO - Translation
-			'thin' => 'Thin',	// TODO - Translation
+			'no_limit' => 'Full Width',	// TODO - Translation
+			'thin' => 'Narrow',	// TODO - Translation
 		),
 	),
 	'profile' => array(
@@ -65,11 +65,22 @@ return array(
 		'_' => 'User queries',	// TODO - Translation
 		'deprecated' => 'This query is no longer valid. The referenced category or feed has been deleted.',	// TODO - Translation
 		'display' => 'Display user query results',	// TODO - Translation
-		'filter' => 'Filter applied:',	// TODO - Translation
+		'filter' => array(
+			'_' => 'Filter applied:',	// TODO - Translation
+			'categories' => 'Display by category',	// TODO - Translation
+			'feeds' => 'Display by feed',	// TODO - Translation
+			'order' => 'Sort by date',	// TODO - Translation
+			'search' => 'Expression',	// TODO - Translation
+			'state' => 'State',	// TODO - Translation
+			'tags' => 'Display by tag',	// TODO - Translation
+			'type' => 'Type',	// TODO - Translation
+		),
 		'get_all' => 'Display all articles',	// TODO - Translation
 		'get_category' => 'Display "%s" category',	// TODO - Translation
 		'get_favorite' => 'Display favorite articles',
 		'get_feed' => 'Display "%s" feed',	// TODO - Translation
+		'get_tag' => 'Display "%s" label',	// TODO - Translation
+		'name' => 'Name',	// TODO - Translation
 		'no_filter' => 'No filter',	// TODO - Translation
 		'none' => 'You haven’t created any user query yet.',
 		'number' => 'Query n°%d',	// TODO - Translation
@@ -98,7 +109,7 @@ return array(
 	'reading' => array(
 		'_' => 'Reading',	// TODO - Translation
 		'after_onread' => 'After “mark all as read”,',	// TODO - Translation
-		'always_show_favorites' => 'Show all articles in favorites by default',	// TODO - Translation
+		'always_show_favorites' => 'Show all articles in favourites by default',	// TODO - Translation
 		'articles_per_page' => 'Number of articles per page',	// TODO - Translation
 		'auto_load_more' => 'Load next articles at the page bottom',
 		'auto_remove_article' => 'Hide articles after reading',	// TODO - Translation
@@ -109,13 +120,13 @@ return array(
 		'img_with_lazyload' => 'Use "lazy load" mode to load pictures',	// TODO - Translation
 		'jump_next' => 'jump to next unread sibling (feed or category)',	// TODO - Translation
 		'mark_updated_article_unread' => 'Mark updated articles as unread',	// TODO - Translation
-		'number_divided_when_reader' => 'Divided by 2 in the reading view.',	// TODO - Translation
+		'number_divided_when_reader' => 'Divide by 2 in the reading view.',	// TODO - Translation
 		'read' => array(
-			'article_open_on_website' => 'when article is opened on its original website',	// TODO - Translation
-			'article_viewed' => 'when article is viewed',	// TODO - Translation
+			'article_open_on_website' => 'when the article is opened on its original website',	// TODO - Translation
+			'article_viewed' => 'when the article is viewed',	// TODO - Translation
 			'scroll' => 'while scrolling',	// TODO - Translation
 			'upon_reception' => 'upon reception of the article',
-			'when' => 'Mark article as read…',	// TODO - Translation
+			'when' => 'Mark an article as read…',	// TODO - Translation
 		),
 		'show' => array(
 			'_' => 'Articles to display',	// TODO - Translation
@@ -124,8 +135,10 @@ return array(
 			'all_articles' => 'Show all articles',	// TODO - Translation
 			'all_categories' => 'All categories',	// TODO - Translation
 			'no_category' => 'No category',	// TODO - Translation
+			'remember_categories' => 'Remember open categories',	// TODO - Translation
 			'unread' => 'Show only unread',	// TODO - Translation
 		),
+		'show_fav_unread_help' => 'Applies also on labels',	// TODO - Translation
 		'sides_close_article' => 'Clicking outside of article text area closes the article',	// TODO - Translation
 		'sort' => array(
 			'_' => 'Sort order',	// TODO - Translation
@@ -188,6 +201,7 @@ return array(
 		'skip_next_article' => 'Focus next without opening',	// TODO - Translation
 		'skip_previous_article' => 'Focus previous without opening',	// TODO - Translation
 		'title' => 'Shortcuts',	// TODO - Translation
+		'toggle_media' => 'Play/pause media',	// TODO - Translation
 		'user_filter' => 'Access user filters',
 		'user_filter_help' => 'If there is only one user filter, it is used. Else filters are accessible by their number.',
 		'views' => 'Views',	// TODO - Translation

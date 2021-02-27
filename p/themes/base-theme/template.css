@@ -16,6 +16,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	background: white;
+	color: black;
 	font-family: "OpenSans", "Cantarell", "Helvetica", "Arial", sans-serif;
 	font-size: 100%;
 }
@@ -304,7 +305,7 @@ a.btn {
 }
 
 .dropdown-menu-scrollable {
-	max-height: 75vh;
+	max-height: min(75vh, 50em);
 	overflow-x: hidden;
 	overflow-y: auto;
 }
@@ -781,6 +782,14 @@ input[type="search"] {
 	overflow: auto;
 }
 
+.subtitle > div {
+	display: inline;
+}
+
+.subtitle > div:not(:first-of-type)::before {
+	content: ' · ';
+}
+
 br {
 	line-height: 1em;
 }
@@ -1203,6 +1212,10 @@ input:checked + .slide-container .properties {
 	white-space: pre-line;
 }
 
+.default-user {
+	font-style: italic;
+}
+
 /*=== READER */
 /*===========*/
 .reader .nav_menu .toggle_aside {
@@ -1283,6 +1296,7 @@ input:checked + .slide-container .properties {
 
 	.aside:target {
 		width: 90%;
+		height: 100vh;
 	}
 
 	.aside_feed .configure-feeds {
@@ -1408,4 +1422,8 @@ input:checked + .slide-container .properties {
 
 .preview_background {
 	background-color: transparent;
+}
+
+.drag-drop-marker {
+	margin: -1px;
 }

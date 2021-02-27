@@ -67,12 +67,8 @@ return array(
 			'ok' => 'У вас установлена библиотека для работы с JSON.',
 		),
 		'mbstring' => array(
-			'nok' => 'Cannot find the recommended library mbstring for Unicode.',	// TODO - Translation
-			'ok' => 'You have the recommended library mbstring for Unicode.',	// TODO - Translation
-		),
-		'minz' => array(
-			'nok' => 'У вас не установлен фрейворк Minz.',
-			'ok' => 'У вас установлен фрейворк Minz.',
+			'nok' => 'Cannot find the recommended mbstring library for Unicode.',	// TODO - Translation
+			'ok' => 'You have the recommended mbstring library for Unicode.',	// TODO - Translation
 		),
 		'pcre' => array(
 			'nok' => 'У вас не установлена необходимая библиотека для работы с регулярными выражениями (php-pcre).',
@@ -102,7 +98,7 @@ return array(
 		),
 		'zip' => array(
 			'nok' => 'You lack ZIP extension (php-zip package).',
-			'ok' => 'You have ZIP extension.',	// TODO - Translation
+			'ok' => 'You have the ZIP extension.',	// TODO - Translation
 		),
 	),
 	'extensions' => array(
@@ -163,7 +159,7 @@ return array(
 			'help' => 'in seconds',	// TODO - Translation
 			'number' => 'Duration to keep logged in',	// TODO - Translation
 		),
-		'force_email_validation' => 'Force email addresses validation',	// TODO - Translation
+		'force_email_validation' => 'Force email address validation',	// TODO - Translation
 		'instance-name' => 'Название этого сервера',
 		'max-categories' => 'Количество категорий на пользователя',
 		'max-feeds' => 'Количество статей на пользователя',
@@ -190,6 +186,7 @@ return array(
 		'database_size' => 'Database size',	// TODO - Translation
 		'delete_users' => 'Delete user',	// TODO - Translation
 		'email' => 'Email address',	// TODO - Translation
+		'enabled' => 'Enabled',	// TODO - Translation
 		'feed_count' => 'Feeds',	// TODO - Translation
 		'is_admin' => 'Is admin',	// TODO - Translation
 		'language' => 'Язык',

@@ -70,10 +70,6 @@ return array(
 			'nok' => '유니코드 지원을 위한 mbstring 라이브러리를 찾을 수 없습니다.',
 			'ok' => '유니코드 지원을 위한 mbstring 라이브러리가 설치되어 있습니다.',
 		),
-		'minz' => array(
-			'nok' => 'Minz 프레임워크를 찾을 수 없습니다.',
-			'ok' => 'Minz 프레임워크가 설치되어 있습니다.',
-		),
 		'pcre' => array(
 			'nok' => '정규표현식을 위한 라이브러리를 찾을 수 없습니다 (php-pcre).',
 			'ok' => '정규표현식을 위한 라이브러리가 설치되어 있습니다 (PCRE).',
@@ -163,7 +159,7 @@ return array(
 			'help' => '초',
 			'number' => '로그인 유지 시간',
 		),
-		'force_email_validation' => 'Force email addresses validation',	// TODO - Translation
+		'force_email_validation' => 'Force email address validation',	// TODO - Translation
 		'instance-name' => '인스턴스 이름',
 		'max-categories' => '사용자별 카테고리 개수 제한',
 		'max-feeds' => '사용자별 피드 개수 제한',
@@ -190,6 +186,7 @@ return array(
 		'database_size' => 'Database size',	// TODO - Translation
 		'delete_users' => '사용자 삭제',
 		'email' => 'Email address',	// TODO - Translation
+		'enabled' => 'Enabled',	// TODO - Translation
 		'feed_count' => 'Feeds',	// TODO - Translation
 		'is_admin' => 'Is admin',	// TODO - Translation
 		'language' => '언어',

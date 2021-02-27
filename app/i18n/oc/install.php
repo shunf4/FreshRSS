@@ -33,7 +33,7 @@ return array(
 		'_' => 'Verificacions',
 		'already_installed' => 'Sembla que FreshRSS es ja installat !',
 		'cache' => array(
-			'nok' => 'Volgatz verificar los dreches sul repertòri <em>./data/cache</em>. Lo servidor HTTP deu poder escriure dedins',
+			'nok' => 'Volgatz verificar los dreches sul repertòri <em>%s</em>. Lo servidor HTTP deu poder escriure dedins.',
 			'ok' => 'Los dreches sul cache son bons.',
 		),
 		'ctype' => array(
@@ -45,7 +45,7 @@ return array(
 			'ok' => 'Avètz la bibliotèca cURL.',
 		),
 		'data' => array(
-			'nok' => 'Volgatz verificar los dreches sul repertòri <em>./data</em>. Lo servidor HTTP deu poder escriure dedins',
+			'nok' => 'Volgatz verificar los dreches sul repertòri <em>%s</em>. Lo servidor HTTP deu poder escriure dedins.',
 			'ok' => 'Los dreches sul repertòri data son bons.',
 		),
 		'dom' => array(
@@ -53,16 +53,12 @@ return array(
 			'ok' => 'Avètz la bibliotèca per percórrer lo DOM.',
 		),
 		'favicons' => array(
-			'nok' => 'Volgatz verificar los dreches sul repertòri <em>./data/favicons</em>. Lo servidor HTTP deu poder escriure dedins',
+			'nok' => 'Volgatz verificar los dreches sul repertòri <em>%s</em>. Lo servidor HTTP deu poder escriure dedins.',
 			'ok' => 'Los dreches sul repertòri dels favicons son bons.',
 		),
 		'fileinfo' => array(
 			'nok' => 'Avètz pas PHP fileinfo (paquet fileinfo).',
 			'ok' => 'Avètz la bibliotèca fileinfo.',
-		),
-		'http_referer' => array(
-			'nok' => 'Mercés de verificar que modificatz pas vòstre HTTP REFERER.',
-			'ok' => 'Lo HTTP REFERER es conegut e sembla correspondre a vòstre servidor.',
 		),
 		'json' => array(
 			'nok' => 'Impossible de trobar l’extension recomandada JSON (paquet php-json).',
@@ -71,10 +67,6 @@ return array(
 		'mbstring' => array(
 			'nok' => 'Impossible de trobar la bibliotèca recomandada mbstring per Unicode.',
 			'ok' => 'Avètz la bibliotèca recomandada mbstring per Unicode.',
-		),
-		'minz' => array(
-			'nok' => 'Avètz pas la bibliotèca Minz.',
-			'ok' => 'Avètz la bibliotèca Minz.',
 		),
 		'pcre' => array(
 			'nok' => 'Impossible de trobar una bibliotèca per las expressions regulara (php-pcre).',
@@ -88,8 +80,13 @@ return array(
 			'nok' => 'Vòstra version PHP es la %s mas FreshRSS demanda almens la version %s.',
 			'ok' => 'Vòstra version PHP es %s, qu’es compatibla amb FreshRSS.',
 		),
+		'tmp' => array(
+			'nok' => 'Volgatz verificar los dreches sul repertòri <em>%s</em>. Lo servidor HTTP deu poder escriure dedins.',
+			'ok' => 'Permissions on the temp directory are good.',	// TODO - Translation
+		),
+		'unknown_process_username' => 'unknown',	// TODO - Translation
 		'users' => array(
-			'nok' => 'Volgatz verificar los dreches sul repertòri <em>./data/users</em>. Lo servidor HTTP deu poder escriure dedins',
+			'nok' => 'Volgatz verificar los dreches sul repertòri <em>%s</em>. Lo servidor HTTP deu poder escriure dedins.',
 			'ok' => 'Los dreches sul repertòri dels utilizaires son bons.',
 		),
 		'xml' => array(
@@ -116,6 +113,9 @@ return array(
 	),
 	'not_deleted' => 'Quicòm a trucat, sembla qu’avètz suprimit <em>%s</em> a la man.',
 	'ok' => 'L’installacion s’es corrèctament passada.',
+	'session' => array(
+		'nok' => 'The web server seems to be incorrectly configured for cookies required for PHP sessions!',	// TODO - Translation
+	),
 	'step' => 'etapa %d',
 	'steps' => 'Etapas',
 	'this_is_the_end' => 'Es la fin',

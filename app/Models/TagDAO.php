@@ -148,6 +148,28 @@ class FreshRSS_TagDAO extends Minz_ModelPdo implements FreshRSS_Searchable {
 		}
 	}
 
+	public function updateEntryTag($oldTagId, $newTagId) {
+		$sql = 'DELETE FROM `_entrytag` WHERE EXISTS (SELECT 1 FROM `_entrytag` AS e WHERE e.id_entry = `_entrytag`.id_entry AND e.id_tag = ? AND `_entrytag`.id_tag = ?)';
+		$stm = $this->pdo->prepare($sql);
+
+		if (!($stm && $stm->execute([$newTagId, $oldTagId]))) {
+			$info = $stm == null ? $this->pdo->errorInfo() : $stm->errorInfo();
+			Minz_Log::error('SQL error moveTag: ' . $info[2]);
+			return false;
+		}
+
+		$sql = 'UPDATE `_entrytag` SET id_tag = ? WHERE id_tag = ?';
+		$stm = $this->pdo->prepare($sql);
+
+		if ($stm && $stm->execute([$newTagId, $oldTagId])) {
+			return $stm->rowCount();
+		} else {
+			$info = $stm == null ? $this->pdo->errorInfo() : $stm->errorInfo();
+			Minz_Log::error('SQL error moveTag: ' . $info[2]);
+			return false;
+		}
+	}
+
 	public function searchById($id) {
 		$sql = 'SELECT * FROM `_tag` WHERE id=?';
 		$stm = $this->pdo->prepare($sql);
@@ -237,12 +259,19 @@ class FreshRSS_TagDAO extends Minz_ModelPdo implements FreshRSS_Searchable {
 		return $res[0]['count'];
 	}
 
-	public function countNotRead($id) {
+	public function countNotRead($id = null) {
 		$sql = 'SELECT COUNT(*) AS count FROM `_entrytag` et '
 			 . 'INNER JOIN `_entry` e ON et.id_entry=e.id '
-			 . 'WHERE et.id_tag=? AND e.is_read=0';
+			 . 'WHERE e.is_read=0';
+		$values = null;
+
+		if (null !== $id) {
+			$sql .= ' AND et.id_tag=?';
+			$values = [$id];
+		}
+
 		$stm = $this->pdo->prepare($sql);
-		$values = array($id);
+
 		$stm->execute($values);
 		$res = $stm->fetchAll(PDO::FETCH_ASSOC);
 		return $res[0]['count'];

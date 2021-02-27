@@ -798,7 +798,7 @@ form th {
   border-radius: 3px;
 }
 
-.aside_feed .stick #btn-importExport {
+.aside_feed .stick #btn-add {
   border-right-color: #303136;
 }
 
@@ -1235,7 +1235,7 @@ form th {
 .flux .website .favicon {
   padding: 5px;
 }
-.flux .date {
+.flux .item.date {
   color: rgba(48, 49, 54, 0.5);
   font-size: 0.85rem;
 }

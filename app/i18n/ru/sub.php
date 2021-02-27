@@ -1,12 +1,13 @@
 <?php
 
 return array(
+	'add' => 'Feed and category creation has been moved <a href=\'%s\'>here</a>. It is also accessible from the menu on the left and from the ✚ icon available on the main page.',	// TODO - Translation
 	'api' => array(
 		'documentation' => 'Copy the following URL to use it within an external tool.',	// TODO - Translation
 		'title' => 'API',	// TODO - Translation
 	),
 	'bookmarklet' => array(
-		'documentation' => 'Drag this button to your bookmarks toolbar or right-click it and choose "Bookmark This Link". Then click "Subscribe" button in any page you want to subscribe to.',	// TODO - Translation
+		'documentation' => 'Drag this button to your bookmarks toolbar or right-click it and choose "Bookmark This Link". Then click the "Subscribe" button in any page you want to subscribe to.',	// TODO - Translation
 		'label' => 'Subscribe',	// TODO - Translation
 		'title' => 'Bookmarklet',	// TODO - Translation
 	),
@@ -16,7 +17,6 @@ return array(
 		'archiving' => 'Archivage',
 		'empty' => 'Empty category',	// TODO - Translation
 		'information' => 'Information',	// TODO - Translation
-		'new' => 'New category',	// TODO - Translation
 		'position' => 'Display position',	// TODO - Translation
 		'position_help' => 'To control category sort order',	// TODO - Translation
 		'title' => 'Title',	// TODO - Translation
@@ -33,6 +33,14 @@ return array(
 			'username' => 'HTTP username',	// TODO - Translation
 		),
 		'clear_cache' => 'Always clear cache',	// TODO - Translation
+		'content_action' => array(
+			'_' => 'Content action when fetching the article content',	// TODO - Translation
+			'append' => 'Add after existing content',	// TODO - Translation
+			'prepend' => 'Add before existing content',	// TODO - Translation
+			'replace' => 'Replace existing content',	// TODO - Translation
+		),
+		'css_cookie' => 'Use Cookies when fetching the article content',	// TODO - Translation
+		'css_cookie_help' => 'Example: <kbd>foo=bar; gdpr_consent=true; cookie=value</kbd>',	// TODO - Translation
 		'css_help' => 'Retrieves truncated RSS feeds (caution, requires more time!)',	// TODO - Translation
 		'css_path' => 'Article CSS selector on original website',	// TODO - Translation
 		'description' => 'Description',	// TODO - Translation
@@ -61,23 +69,25 @@ return array(
 			'main_stream' => 'Show in main stream',	// TODO - Translation
 			'normal' => 'Show in its category',	// TODO - Translation
 		),
+		'proxy' => 'Set a proxy for fetching this feed',	// TODO - Translation
+		'proxy_help' => 'Select a protocol (e.g: SOCKS5) and enter the proxy address (e.g: <kbd>127.0.0.1:1080</kbd>)',	// TODO - Translation
 		'selector_preview' => array(
 			'show_raw' => 'Show source code',	// TODO - Translation
 			'show_rendered' => 'Show content',	// TODO - Translation
 		),
 		'show' => array(
 			'all' => 'Show all feeds',	// TODO - Translation
-			'error' => 'Show only feeds with error',	// TODO - Translation
+			'error' => 'Show only feeds with errors',	// TODO - Translation
 		),
 		'showing' => array(
-			'error' => 'Showing only feeds with error',	// TODO - Translation
+			'error' => 'Showing only feeds with errors',	// TODO - Translation
 		),
 		'ssl_verify' => 'Verify SSL security',	// TODO - Translation
 		'stats' => 'Statistics',	// TODO - Translation
 		'think_to_add' => 'You may add some feeds.',	// TODO - Translation
 		'timeout' => 'Timeout in seconds',	// TODO - Translation
 		'title' => 'Title',	// TODO - Translation
-		'title_add' => 'Add a RSS feed',	// TODO - Translation
+		'title_add' => 'Add an RSS feed',	// TODO - Translation
 		'ttl' => 'Do not automatically refresh more often than',	// TODO - Translation
 		'url' => 'Feed URL',	// TODO - Translation
 		'validator' => 'Check the validity of the feed',	// TODO - Translation
@@ -102,14 +112,28 @@ return array(
 		'title' => 'Import / export',	// TODO - Translation
 	),
 	'menu' => array(
+		'add' => 'Add a feed or category',	// TODO - Translation
+		'add_feed' => 'Add a feed',	// TODO - Translation
 		'bookmark' => 'Subscribe (FreshRSS bookmark)',	// TODO - Translation
 		'import_export' => 'Import / export',	// TODO - Translation
-		'subscription_management' => 'Subscriptions management',	// TODO - Translation
+		'label_management' => 'Label management',	// TODO - Translation
+		'subscription_management' => 'Subscription management',	// TODO - Translation
 		'subscription_tools' => 'Subscription tools',	// TODO - Translation
 	),
+	'tag' => array(
+		'name' => 'Name',	// TODO - Translation
+		'new_name' => 'New name',	// TODO - Translation
+		'old_name' => 'Old name',	// TODO - Translation
+	),
 	'title' => array(
-		'_' => 'Subscriptions management',	// TODO - Translation
+		'_' => 'Subscription management',	// TODO - Translation
+		'add' => 'Add a feed or category',	// TODO - Translation
+		'add_category' => 'Add a category',	// TODO - Translation
+		'add_feed' => 'Add a feed',	// TODO - Translation
+		'add_label' => 'Add a label',	// TODO - Translation
+		'delete_label' => 'Delete a label',	// TODO - Translation
 		'feed_management' => 'RSS feeds management',	// TODO - Translation
+		'rename_label' => 'Rename a label',	// TODO - Translation
 		'subscription_tools' => 'Subscription tools',	// TODO - Translation
 	),
 );

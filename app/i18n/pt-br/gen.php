@@ -3,6 +3,7 @@
 return array(
 	'action' => array(
 		'actualize' => 'Atualizar',
+		'add' => 'Add',	// TODO - Translation
 		'back' => '← Voltar',
 		'back_to_rss_feeds' => '← Volte para o seu feeds RSS',
 		'cancel' => 'Cancelar',
@@ -14,12 +15,14 @@ return array(
 		'export' => 'Exportar',
 		'filter' => 'Filtrar',
 		'import' => 'Importar',
+		'load_default_shortcuts' => 'Load default shortcuts',	// TODO - Translation
 		'manage' => 'Gerenciar',
 		'mark_favorite' => 'Marcar como favorito',
 		'mark_read' => 'Marcar como lido',
 		'promote' => 'Promover',
 		'purge' => 'Limpar',
 		'remove' => 'Remover',
+		'rename' => 'Rename',	// TODO - Translation
 		'see_website' => 'Ver o site',
 		'submit' => 'Enviar',
 		'truncate' => 'Deletar todos os artigos',
@@ -127,6 +130,7 @@ return array(
 		'cz' => 'Čeština',
 		'de' => 'Deutsch',
 		'en' => 'English',
+		'en-us' => 'English (United States)',
 		'es' => 'Español',
 		'fr' => 'Français',
 		'he' => 'עברית',
@@ -134,6 +138,7 @@ return array(
 		'kr' => '한국어',
 		'nl' => 'Nederlands',
 		'oc' => 'Occitan',
+		'pl' => 'Polski',
 		'pt-br' => 'Português (Brasil)',
 		'ru' => 'Русский',
 		'sk' => 'Slovenčina',
@@ -180,6 +185,7 @@ return array(
 	'share' => array(
 		'Known' => 'Known based sites',	// TODO - Translation
 		'blogotext' => 'Blogotext',
+		'clipboard' => 'Clipboard',	// TODO - Translation
 		'diaspora' => 'Diaspora*',
 		'email' => 'Email',	// TODO - Translation
 		'facebook' => 'Facebook',

@@ -1,6 +1,7 @@
 <?php
 
 return array(
+	'add' => 'Het toevoegen van feeds en categorieën is <a href=\'%s\'>hierheen</a> verplaatst. Deze functionaliteit is ook toegankelijk via het menu links en via het ✚ icoon op de hoofdpagina.',
 	'api' => array(
 		'documentation' => 'Kopieer de volgende URL om deze in een externe toepassing te gebruiken.',
 		'title' => 'API',
@@ -16,7 +17,6 @@ return array(
 		'archiving' => 'Archiveren',
 		'empty' => 'Lege categorie',
 		'information' => 'Informatie',
-		'new' => 'Nieuwe categorie',
 		'position' => 'Weergavepositie',
 		'position_help' => 'Om de categorieweergave-sorteervolgorde te controleren',
 		'title' => 'Titel',
@@ -33,6 +33,14 @@ return array(
 			'username' => 'HTTP gebruikers naam',
 		),
 		'clear_cache' => 'Cache altijd leegmaken',
+		'content_action' => array(
+			'_' => 'Inhoudsactie bij ophalen artikelinhoud',
+			'append' => 'Na huidige inhoud toevoegen',
+			'prepend' => 'Voor huidige inhoud toevoegen',
+			'replace' => 'Huidige inhoud vervangen',
+		),
+		'css_cookie' => 'Cookies gebruiken bij het ophalen van artikelinhoud',
+		'css_cookie_help' => 'Voorbeeld: <kbd>foo=bar; gdpr_consent=true; cookie=value</kbd>',
 		'css_help' => 'Haalt onvolledige RSS-feeds op (attentie, heeft meer tijd nodig!)',
 		'css_path' => 'CSS-pad van artikelen op originele website',
 		'description' => 'Omschrijving',
@@ -61,6 +69,8 @@ return array(
 			'main_stream' => 'Zichtbaar in het overzicht',
 			'normal' => 'Toon in categorie',
 		),
+		'proxy' => 'Proxy instellen om deze feed op te halen',
+		'proxy_help' => 'Selecteer een protocol (bv. SOCKS5) en voer een proxy-adres in (b.v. <kbd>127.0.0.1:1080</kbd>)',
 		'selector_preview' => array(
 			'show_raw' => 'Broncode tonen',
 			'show_rendered' => 'Inhoud tonen',
@@ -102,14 +112,28 @@ return array(
 		'title' => 'Importeren / exporteren',
 	),
 	'menu' => array(
+		'add' => 'Feed of categorie toevoegen',
+		'add_feed' => 'Feed toevoegen',
 		'bookmark' => 'Abonneer (FreshRSS bladwijzer)',
 		'import_export' => 'Importeer / exporteer',
+		'label_management' => 'Labelbeheer',
 		'subscription_management' => 'Abonnementenbeheer',
 		'subscription_tools' => 'Hulpmiddelen voor abonnementen',
 	),
+	'tag' => array(
+		'name' => 'Naam',
+		'new_name' => 'Nieuwe naam',
+		'old_name' => 'Oude naam',
+	),
 	'title' => array(
 		'_' => 'Abonnementenbeheer',
+		'add' => 'Feed of categorie toevoegen',
+		'add_category' => 'Categorie toevoegen',
+		'add_feed' => 'Feed toevoegen',
+		'add_label' => 'Label toevoegen',
+		'delete_label' => 'Label verwijderen',
 		'feed_management' => 'RSS-feedbeheer',
+		'rename_label' => 'Label hernoemen',
 		'subscription_tools' => 'Hulpmiddelen voor abonnementen',
 	),
 );

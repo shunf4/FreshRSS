@@ -67,12 +67,8 @@ return array(
 			'ok' => 'Dispones de la extensión JSON.',
 		),
 		'mbstring' => array(
-			'nok' => 'Cannot find the recommended library mbstring for Unicode.',	// TODO - Translation
-			'ok' => 'You have the recommended library mbstring for Unicode.',	// TODO - Translation
-		),
-		'minz' => array(
-			'nok' => 'No se ha podido localizar el entorno Minz.',
-			'ok' => 'Dispones del entorno Minz.',
+			'nok' => 'Cannot find the recommended mbstring library for Unicode.',	// TODO - Translation
+			'ok' => 'You have the recommended mbstring library for Unicode.',	// TODO - Translation
 		),
 		'pcre' => array(
 			'nok' => 'No se ha podido localizar la librería para las expresiones regulares (php-pcre).',
@@ -163,7 +159,7 @@ return array(
 			'help' => 'in seconds',	// TODO - Translation
 			'number' => 'Duration to keep logged in',	// TODO - Translation
 		),
-		'force_email_validation' => 'Force email addresses validation',	// TODO - Translation
+		'force_email_validation' => 'Force email address validation',	// TODO - Translation
 		'instance-name' => 'Nombre de la fuente',
 		'max-categories' => 'Límite de categorías por usuario',
 		'max-feeds' => 'Límite de fuentes por usuario',
@@ -190,6 +186,7 @@ return array(
 		'database_size' => 'Database size',	// TODO - Translation
 		'delete_users' => 'Delete user',	// TODO - Translation
 		'email' => 'Email address',	// TODO - Translation
+		'enabled' => 'Enabled',	// TODO - Translation
 		'feed_count' => 'Feeds',	// TODO - Translation
 		'is_admin' => 'Is admin',	// TODO - Translation
 		'language' => 'Idioma',

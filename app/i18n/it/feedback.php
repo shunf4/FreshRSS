@@ -36,6 +36,7 @@ return array(
 	),
 	'extensions' => array(
 		'already_enabled' => '%s è già abilitata',
+		'cannot_remove' => '%s cannot be removed',	// TODO - Translation
 		'disable' => array(
 			'ko' => '%s non può essere disabilitata. <a href="%s">Verifica i logs</a> per dettagli.',
 			'ok' => '%s è disabilitata',
@@ -47,6 +48,7 @@ return array(
 		'no_access' => 'Accesso negato a %s',
 		'not_enabled' => '%s non abilitato',
 		'not_found' => '%s non disponibile',
+		'removed' => '%s removed',	// TODO - Translation
 	),
 	'import_export' => array(
 		'export_no_zip_extension' => 'Estensione ZIP non presente sul server. Per favore esporta i files singolarmente.',
@@ -99,13 +101,18 @@ return array(
 			'selector_preview' => array(
 				'http_error' => 'Failed to load website content.',	// TODO - Translation
 				'no_entries' => 'There are no articles in this feed. You need at least one article to create a preview.',	// TODO - Translation
-				'no_feed' => 'Internal error (feed can’t be found).',	// TODO - Translation
+				'no_feed' => 'Internal error (feed cannot be found).',	// TODO - Translation
 				'no_result' => 'The selector didn\'t match anything. As a fallback the original feed text will be displayed instead.',	// TODO - Translation
 				'selector_empty' => 'The selector is empty. You need to define one to create a preview.',	// TODO - Translation
 			),
 			'updated' => 'Feed aggiornato',
 		),
 		'purge_completed' => 'Svecchiamento completato (%d articoli cancellati)',
+	),
+	'tag' => array(
+		'created' => 'Tag "%s" has been created.',	// TODO - Translation
+		'name_exists' => 'Tag name already exists.',	// TODO - Translation
+		'renamed' => 'Tag "%s" has been renamed to "%s".',	// TODO - Translation
 	),
 	'update' => array(
 		'can_apply' => 'FreshRSS verrà aggiornato alla <strong>versione %s</strong>.',

@@ -33,7 +33,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package SimplePie
- * @version 1.5.4
+ * @version 1.5.6
  * @copyright 2004-2017 Ryan Parman, Sam Sneddon, Ryan McCue
  * @author Ryan Parman
  * @author Sam Sneddon
@@ -50,7 +50,7 @@ define('SIMPLEPIE_NAME', 'SimplePie');
 /**
  * SimplePie Version
  */
-define('SIMPLEPIE_VERSION', '1.5.4');
+define('SIMPLEPIE_VERSION', '1.5.6');
 
 /**
  * SimplePie Build
@@ -718,7 +718,7 @@ class SimplePie
 	 */
 	public function __destruct()
 	{
-		if ((version_compare(PHP_VERSION, '5.6', '<') || !gc_enabled()) && !ini_get('zend.ze1_compatibility_mode'))
+		if (!gc_enabled())
 		{
 			if (!empty($this->data['items']))
 			{
@@ -1322,12 +1322,24 @@ class SimplePie
 
 	function cleanMd5($rss)
 	{
-		return md5(preg_replace(array(
-			'#<(lastBuildDate|pubDate|updated|feedDate|dc:date|slash:comments)>[^<]+</\\1>#',
-			'#<(media:starRating|media:statistics) [^/<>]+/>#',
-			'#<!--.+?-->#s',
-			), '', $rss));
-		
+		//Process by chunks not to use too much memory
+		if (($stream = fopen('php://temp', 'r+')) &&
+			fwrite($stream, $rss) &&
+			rewind($stream))
+		{
+			$ctx = hash_init('md5');
+			while ($stream_data = fread($stream, 1048576))
+			{
+				hash_update($ctx, preg_replace([
+					'#<(lastBuildDate|pubDate|updated|feedDate|dc:date|slash:comments)>[^<]+</\\1>#',
+					'#<(media:starRating|media:statistics) [^/<>]+/>#',
+					'#<!--.+?-->#s',
+				], '', $stream_data));
+			}
+			fclose($stream);
+			return hash_final($ctx);
+		}
+		return '';
 	}
 
 	/**
@@ -1429,7 +1441,7 @@ class SimplePie
 			// Fetch the data via SimplePie_File into $this->raw_data
 			if (($fetched = $this->fetch_data($cache)) === true)
 			{
-				return $this->data['mtime'];
+				return empty($this->data['mtime']) ? false : $this->data['mtime'];
 			}
 			elseif ($fetched === false) {
 				$this->error = 'Not fetched!';
@@ -1515,7 +1527,7 @@ class SimplePie
 				$parser = $this->registry->create('Parser');
 
 				// If it's parsed fine
-				if ($parser->parse($utf8_data, empty($encoding) ? '' : 'UTF-8'))	//FreshRSS
+				if ($parser->parse($utf8_data, empty($encoding) ? '' : 'UTF-8', $this->permanent_url))	//FreshRSS
 				{
 					$this->data = $parser->get_data();
 					if (!($this->get_type() & ~SIMPLEPIE_TYPE_NONE))

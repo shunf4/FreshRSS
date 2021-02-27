@@ -70,10 +70,6 @@ return array(
 			'nok' => 'Impossible de trouver la librairie recommandée mbstring pour Unicode.',
 			'ok' => 'Vouz disposez de la librairie recommandée mbstring pour Unicode.',
 		),
-		'minz' => array(
-			'nok' => 'Vous ne disposez pas de la librairie Minz.',
-			'ok' => 'Vous disposez du framework Minz',
-		),
 		'pcre' => array(
 			'nok' => 'Impossible de trouver une librairie pour les expressions régulières (php-pcre).',
 			'ok' => 'Vous disposez de la librairie pour les expressions régulières (PCRE).',
@@ -190,8 +186,9 @@ return array(
 		'database_size' => 'Volumétrie',
 		'delete_users' => 'Supprimer un utilisateur',
 		'email' => 'Adresse email',
+		'enabled' => 'Actif',
 		'feed_count' => 'Flux',
-		'is_admin' => 'Admin ?',
+		'is_admin' => 'Admin',
 		'language' => 'Langue',
 		'last_user_activity' => 'Dernière activité utilisateur',
 		'list' => 'Liste des utilisateurs',

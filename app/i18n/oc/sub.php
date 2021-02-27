@@ -1,6 +1,7 @@
 <?php
 
 return array(
+	'add' => 'La creacion de flux e categoria es desplaçada <a href=\'%s\'>aquí</a>. I avètz tanben accès del menú a man esquèrra e de l’icòna ✚ sus la pagina principala.',
 	'api' => array(
 		'documentation' => 'Copiatz l’URL seguenta per l’utilizaire dins d’una aisina extèrna.',
 		'title' => 'API',
@@ -16,7 +17,6 @@ return array(
 		'archiving' => 'Archivar',
 		'empty' => 'Categoria voida',
 		'information' => 'Informacions',
-		'new' => 'Nòva categoria',
 		'position' => 'Mostrar la posicion',
 		'position_help' => 'Per contrarotlar l’òrdre de tria de la categoria',
 		'title' => 'Títol',
@@ -33,6 +33,14 @@ return array(
 			'username' => 'Identificant HTTP',
 		),
 		'clear_cache' => 'Totjorn escafar lo cache',
+		'content_action' => array(
+			'_' => 'Content action when fetching the article content',	// TODO - Translation
+			'append' => 'Add after existing content',	// TODO - Translation
+			'prepend' => 'Add before existing content',	// TODO - Translation
+			'replace' => 'Replace existing content',	// TODO - Translation
+		),
+		'css_cookie' => 'Use Cookies when fetching the article content',	// TODO - Translation
+		'css_cookie_help' => 'Example: <kbd>foo=bar; gdpr_consent=true; cookie=value</kbd>',	// TODO - Translation
 		'css_help' => 'Permet de recuperar los fluxes troncats (atencion, demanda mai de temps !)',
 		'css_path' => 'Selector CSS dels articles sul site d’origina',
 		'description' => 'Descripcion',
@@ -61,6 +69,8 @@ return array(
 			'main_stream' => 'Mostar al flux màger',
 			'normal' => 'Mostar dins sa categoria',
 		),
+		'proxy' => 'Set a proxy for fetching this feed',	// TODO - Translation
+		'proxy_help' => 'Select a protocol (e.g: SOCKS5) and enter the proxy address (e.g: <kbd>127.0.0.1:1080</kbd>)',	// TODO - Translation
 		'selector_preview' => array(
 			'show_raw' => 'Veire lo còdi font',
 			'show_rendered' => 'Veire lo contengut',
@@ -102,14 +112,28 @@ return array(
 		'title' => 'Importar / Exportar',
 	),
 	'menu' => array(
+		'add' => 'Ajustar un flux o una categoria',
+		'add_feed' => 'Ajustar un flux',
 		'bookmark' => 'Sabonar (marcapagina FreshRSS)',
 		'import_export' => 'Importar / Exportar',
+		'label_management' => 'Gestion de las etiquetas',
 		'subscription_management' => 'Gestion dels abonaments',
 		'subscription_tools' => 'Aisinas d’abonament',
 	),
+	'tag' => array(
+		'name' => 'Nom',
+		'new_name' => 'Nom novèl',
+		'old_name' => 'Nom ancian',
+	),
 	'title' => array(
 		'_' => 'Gestion dels abonaments',
+		'add' => 'Apondon de flux o categoria',
+		'add_category' => 'Ajustar una categoria',
+		'add_feed' => 'Ajustar un flux',
+		'add_label' => 'Ajustar una etiqueta',
+		'delete_label' => 'Suprimir una etiqueta',
 		'feed_management' => 'Gestion dels fluxes RSS',
+		'rename_label' => 'Rennomenar una etiqueta',
 		'subscription_tools' => 'Aisinas d’abonament',
 	),
 );

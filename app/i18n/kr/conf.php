@@ -11,7 +11,7 @@ return array(
 		'keep_max' => 'Maximum number of articles to keep',	// TODO - Translation
 		'keep_min_by_feed' => '피드별 최소 유지 글 개수',
 		'keep_period' => 'Maximum age of articles to keep',	// TODO - Translation
-		'keep_unreads' => 'Never delete unreads',	// TODO - Translation
+		'keep_unreads' => 'Never delete unread articles',	// TODO - Translation
 		'maintenance' => 'Maintenance',	// TODO - Translation
 		'optimize' => '데이터베이스 최적화',
 		'optimize_help' => '데이터베이스 크기를 줄이기 위해 가끔씩 수행해주세요',
@@ -65,11 +65,22 @@ return array(
 		'_' => '사용자 쿼리',
 		'deprecated' => '이 쿼리는 더 이상 유효하지 않습니다. 해당하는 카테고리나 피드가 삭제되었습니다.',
 		'display' => '사용자 쿼리 결과 표시',
-		'filter' => '적용된 필터:',
+		'filter' => array(
+			'_' => 'Filter applied:',	// TODO - Translation
+			'categories' => 'Display by category',	// TODO - Translation
+			'feeds' => 'Display by feed',	// TODO - Translation
+			'order' => 'Sort by date',	// TODO - Translation
+			'search' => 'Expression',	// TODO - Translation
+			'state' => 'State',	// TODO - Translation
+			'tags' => 'Display by tag',	// TODO - Translation
+			'type' => 'Type',	// TODO - Translation
+		),
 		'get_all' => '모든 글 표시',
 		'get_category' => '"%s" 카테고리 표시',
 		'get_favorite' => '즐겨찾기에 등록된 글 표시',
 		'get_feed' => '"%s" 피드 표시',
+		'get_tag' => 'Display "%s" label',	// TODO - Translation
+		'name' => 'Name',	// TODO - Translation
 		'no_filter' => '필터가 없습니다',
 		'none' => '아직 사용자 쿼리를 만들지 않았습니다.',
 		'number' => '쿼리 #%d',
@@ -98,7 +109,7 @@ return array(
 	'reading' => array(
 		'_' => '읽기',
 		'after_onread' => '“모두 읽음으로 표시” 후,',
-		'always_show_favorites' => 'Show all articles in favorites by default',	// TODO - Translation
+		'always_show_favorites' => 'Show all articles in favourites by default',	// TODO - Translation
 		'articles_per_page' => '페이지당 글 수',
 		'auto_load_more' => '페이지 하단에 다다르면 글 더 불러오기',
 		'auto_remove_article' => '글을 읽은 후 숨기기',
@@ -124,8 +135,10 @@ return array(
 			'all_articles' => '모든 글 표시',
 			'all_categories' => 'All categories',	// TODO - Translation
 			'no_category' => 'No category',	// TODO - Translation
+			'remember_categories' => 'Remember open categories',	// TODO - Translation
 			'unread' => '읽지 않은 글만 표시',
 		),
+		'show_fav_unread_help' => 'Applies also on labels',	// TODO - Translation
 		'sides_close_article' => '글 영역 바깥을 클릭하면 글 접기',
 		'sort' => array(
 			'_' => '정렬 순서',
@@ -188,6 +201,7 @@ return array(
 		'skip_next_article' => '다음 글로 커서 이동',
 		'skip_previous_article' => '이전 글로 커서 이동',
 		'title' => '단축키',
+		'toggle_media' => 'Play/pause media',	// TODO - Translation
 		'user_filter' => '사용자 필터 사용하기',
 		'user_filter_help' => '사용자 필터가 하나만 설정되어 있다면 해당 필터를 사용하고, 그렇지 않다면 필터를 번호로 선택할 수 있습니다.',
 		'views' => '표시',

@@ -1,12 +1,13 @@
 <?php
 
 return array(
+	'add' => 'Feed and category creation has been moved <a href=\'%s\'>here</a>. It is also accessible from the menu on the left and from the ✚ icon available on the main page.',	// TODO - Translation
 	'api' => array(
 		'documentation' => 'Copy the following URL to use it within an external tool.',	// TODO - Translation
 		'title' => 'API',	// TODO - Translation
 	),
 	'bookmarklet' => array(
-		'documentation' => 'Drag this button to your bookmarks toolbar or right-click it and choose "Bookmark This Link". Then click "Subscribe" button in any page you want to subscribe to.',	// TODO - Translation
+		'documentation' => 'Drag this button to your bookmarks toolbar or right-click it and choose "Bookmark This Link". Then click the "Subscribe" button in any page you want to subscribe to.',	// TODO - Translation
 		'label' => 'Subscribe',	// TODO - Translation
 		'title' => 'Bookmarklet',	// TODO - Translation
 	),
@@ -16,7 +17,6 @@ return array(
 		'archiving' => 'Archivo',
 		'empty' => 'Vaciar categoría',
 		'information' => 'Información',
-		'new' => 'Nueva categoría',
 		'position' => 'Display position',	// TODO - Translation
 		'position_help' => 'To control category sort order',	// TODO - Translation
 		'title' => 'Título',
@@ -33,6 +33,14 @@ return array(
 			'username' => 'Nombre de usuario HTTP',
 		),
 		'clear_cache' => 'Always clear cache',	// TODO - Translation
+		'content_action' => array(
+			'_' => 'Content action when fetching the article content',	// TODO - Translation
+			'append' => 'Add after existing content',	// TODO - Translation
+			'prepend' => 'Add before existing content',	// TODO - Translation
+			'replace' => 'Replace existing content',	// TODO - Translation
+		),
+		'css_cookie' => 'Use Cookies when fetching the article content',	// TODO - Translation
+		'css_cookie_help' => 'Example: <kbd>foo=bar; gdpr_consent=true; cookie=value</kbd>',	// TODO - Translation
 		'css_help' => 'Recibir fuentes RSS truncadas (aviso, ¡necesita más tiempo!)',
 		'css_path' => 'Ruta a la CSS de los artículos en la web original',
 		'description' => 'Descripción',
@@ -61,16 +69,18 @@ return array(
 			'main_stream' => 'Mostrar en salida principal',
 			'normal' => 'Show in its category',	// TODO - Translation
 		),
+		'proxy' => 'Set a proxy for fetching this feed',	// TODO - Translation
+		'proxy_help' => 'Select a protocol (e.g: SOCKS5) and enter the proxy address (e.g: <kbd>127.0.0.1:1080</kbd>)',	// TODO - Translation
 		'selector_preview' => array(
 			'show_raw' => 'Show source code',	// TODO - Translation
 			'show_rendered' => 'Show content',	// TODO - Translation
 		),
 		'show' => array(
 			'all' => 'Show all feeds',	// TODO - Translation
-			'error' => 'Show only feeds with error',	// TODO - Translation
+			'error' => 'Show only feeds with errors',	// TODO - Translation
 		),
 		'showing' => array(
-			'error' => 'Showing only feeds with error',	// TODO - Translation
+			'error' => 'Showing only feeds with errors',	// TODO - Translation
 		),
 		'ssl_verify' => 'Verify SSL security',	// TODO - Translation
 		'stats' => 'Estadísticas',
@@ -102,14 +112,28 @@ return array(
 		'title' => 'Importar / exportar',
 	),
 	'menu' => array(
+		'add' => 'Add a feed or category',	// TODO - Translation
+		'add_feed' => 'Add a feed',	// TODO - Translation
 		'bookmark' => 'Suscribirse (favorito FreshRSS)',
 		'import_export' => 'Importar / exportar',
+		'label_management' => 'Label management',	// TODO - Translation
 		'subscription_management' => 'Administración de suscripciones',
 		'subscription_tools' => 'Subscription tools',	// TODO - Translation
 	),
+	'tag' => array(
+		'name' => 'Name',	// TODO - Translation
+		'new_name' => 'New name',	// TODO - Translation
+		'old_name' => 'Old name',	// TODO - Translation
+	),
 	'title' => array(
 		'_' => 'Administración de suscripciones',
+		'add' => 'Add a feed or category',	// TODO - Translation
+		'add_category' => 'Add a category',	// TODO - Translation
+		'add_feed' => 'Add a feed',	// TODO - Translation
+		'add_label' => 'Add a label',	// TODO - Translation
+		'delete_label' => 'Delete a label',	// TODO - Translation
 		'feed_management' => 'Administración de fuentes RSS',
+		'rename_label' => 'Rename a label',	// TODO - Translation
 		'subscription_tools' => 'Subscription tools',	// TODO - Translation
 	),
 );

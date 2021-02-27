@@ -67,12 +67,8 @@ return array(
 			'ok' => 'Máte rozšíření JSON.',
 		),
 		'mbstring' => array(
-			'nok' => 'Cannot find the recommended library mbstring for Unicode.',	// TODO - Translation
-			'ok' => 'You have the recommended library mbstring for Unicode.',	// TODO - Translation
-		),
-		'minz' => array(
-			'nok' => 'Nemáte framework Minz.',
-			'ok' => 'Máte framework Minz.',
+			'nok' => 'Cannot find the recommended mbstring library for Unicode.',	// TODO - Translation
+			'ok' => 'You have the recommended mbstring library for Unicode.',	// TODO - Translation
 		),
 		'pcre' => array(
 			'nok' => 'Nemáte požadovanou knihovnu pro regulární výrazy (php-pcre).',
@@ -163,10 +159,10 @@ return array(
 			'help' => 'in seconds',	// TODO - Translation
 			'number' => 'Duration to keep logged in',	// TODO - Translation
 		),
-		'force_email_validation' => 'Force email addresses validation',	// TODO - Translation
+		'force_email_validation' => 'Force email address validation',	// TODO - Translation
 		'instance-name' => 'Instance name',	// TODO - Translation
-		'max-categories' => 'Categories per user limit',	// TODO - Translation
-		'max-feeds' => 'Feeds per user limit',	// TODO - Translation
+		'max-categories' => 'Max number of categories per user',	// TODO - Translation
+		'max-feeds' => 'Max number of feeds per user',	// TODO - Translation
 		'registration' => array(
 			'help' => '0 znamená žádná omezení účtu',
 			'number' => 'Maximální počet účtů',
@@ -190,6 +186,7 @@ return array(
 		'database_size' => 'Database size',	// TODO - Translation
 		'delete_users' => 'Delete user',	// TODO - Translation
 		'email' => 'Email address',	// TODO - Translation
+		'enabled' => 'Enabled',	// TODO - Translation
 		'feed_count' => 'Feeds',	// TODO - Translation
 		'is_admin' => 'Is admin',	// TODO - Translation
 		'language' => 'Jazyk',

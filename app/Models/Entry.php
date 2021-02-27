@@ -87,9 +87,11 @@ class FreshRSS_Entry extends Minz_Model {
 	public function date($raw = false) {
 		if ($raw) {
 			return $this->date;
-		} else {
-			return timestamptodate($this->date);
 		}
+		return timestamptodate($this->date);
+	}
+	public function machineReadableDate() {
+		return @date (DATE_ATOM, $this->date);
 	}
 	public function dateAdded($raw = false, $microsecond = false) {
 		if ($raw) {
@@ -353,11 +355,10 @@ class FreshRSS_Entry extends Minz_Model {
 	}
 
 	public static function getContentByParsing($url, $path, $attributes = array(), $maxRedirs = 3) {
-		$system_conf = Minz_Configuration::get('system');
-		$limits = $system_conf->limits;
+		$limits = FreshRSS_Context::$system_conf->limits;
 		$feed_timeout = empty($attributes['timeout']) ? 0 : intval($attributes['timeout']);
 
-		if ($system_conf->simplepie_syslog_enabled) {
+		if (FreshRSS_Context::$system_conf->simplepie_syslog_enabled) {
 			syslog(LOG_INFO, 'FreshRSS GET ' . SimplePie_Misc::url_remove_credentials($url));
 		}
 
@@ -375,10 +376,19 @@ class FreshRSS_Entry extends Minz_Model {
 			CURLOPT_FOLLOWLOCATION => true,
 			CURLOPT_ENCODING => '',	//Enable all encodings
 		]);
-		curl_setopt_array($ch, $system_conf->curl_options);
+
+		curl_setopt_array($ch, FreshRSS_Context::$system_conf->curl_options);
+
+		if (isset($attributes['curl_params']) && is_array($attributes['curl_params'])) {
+			curl_setopt_array($ch, $attributes['curl_params']);
+		}
+
 		if (isset($attributes['ssl_verify'])) {
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, $attributes['ssl_verify'] ? 2 : 0);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $attributes['ssl_verify'] ? true : false);
+			if (!$attributes['ssl_verify']) {
+				curl_setopt($ch, CURLOPT_SSL_CIPHER_LIST, 'DEFAULT@SECLEVEL=1');
+			}
 		}
 		$html = curl_exec($ch);
 		$c_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -436,8 +446,23 @@ class FreshRSS_Entry extends Minz_Model {
 						$feed->pathEntries(),
 						$feed->attributes()
 					);
-					if ($fullContent != '') {
-						$this->content = $fullContent;
+					if ('' !== $fullContent) {
+						$fullContent = "<!-- FULLCONTENT start //-->{$fullContent}<!-- FULLCONTENT end //-->";
+						$originalContent = preg_replace('#<!-- FULLCONTENT start //-->.*<!-- FULLCONTENT end //-->#s', '', $this->content());
+						switch ($feed->attributes('content_action')) {
+							case 'prepend':
+								$this->content = $fullContent . $originalContent;
+								break;
+							case 'append':
+								$this->content = $originalContent . $fullContent;
+								break;
+							case 'replace':
+							default:
+								$this->content = $fullContent;
+								break;
+						}
+
+						return true;
 					}
 				} catch (Exception $e) {
 					// rien à faire, on garde l'ancien contenu(requête a échoué)
@@ -445,6 +470,7 @@ class FreshRSS_Entry extends Minz_Model {
 				}
 			}
 		}
+		return false;
 	}
 
 	public function toArray() {

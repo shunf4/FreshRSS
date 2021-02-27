@@ -36,6 +36,7 @@ return array(
 	),
 	'extensions' => array(
 		'already_enabled' => '%s is al ingeschakeld',
+		'cannot_remove' => '%s kan niet worden verwijderd',
 		'disable' => array(
 			'ko' => '%s kan niet worden uitgeschakeld. <a href="%s">Controleer FreshRSS log bestanden</a> voor details.',
 			'ok' => '%s is nu uitgeschakeld',
@@ -47,6 +48,7 @@ return array(
 		'no_access' => 'U hebt geen toegang voor %s',
 		'not_enabled' => '%s is nog niet ingeschakeld',
 		'not_found' => '%s bestaat niet',
+		'removed' => '%s verwijderd',
 	),
 	'import_export' => array(
 		'export_no_zip_extension' => 'ZIP uitbreiding is niet aanwezig op uw server. Exporteer a.u.b. uw bestanden één voor één.',
@@ -106,6 +108,11 @@ return array(
 			'updated' => 'Feed is vernieuwd',
 		),
 		'purge_completed' => 'Opschonen klaar (%d artikelen verwijderd)',
+	),
+	'tag' => array(
+		'created' => 'Tag "%s" is aangemaakt.',
+		'name_exists' => 'Tagnaam bestaat al.',
+		'renamed' => 'Tag "%s" hernoemd naar "%s".',
 	),
 	'update' => array(
 		'can_apply' => 'FreshRSS word nu vernieud naar <strong>versie %s</strong>.',

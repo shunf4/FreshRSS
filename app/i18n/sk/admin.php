@@ -70,10 +70,6 @@ return array(
 			'nok' => 'Nepodarilo sa nájsť požadovanú knižnicu mbstring pre Unicode.',
 			'ok' => 'Našla sa požadovaná knižnica mbstring pre Unicode.',
 		),
-		'minz' => array(
-			'nok' => 'Nepodarilo sa nájsť framework Minz.',
-			'ok' => 'Našiel sa framework Minz.',
-		),
 		'pcre' => array(
 			'nok' => 'Nepodarilo sa nájsť požadovanú knižnicu pre regulárne výrazy (php-pcre).',
 			'ok' => 'Našla sa požadovaná knižnica pre regulárne výrazy (PCRE).',
@@ -163,7 +159,7 @@ return array(
 			'help' => 'v sekundách',
 			'number' => 'Dobra, počas ktorej ste prihlásený',
 		),
-		'force_email_validation' => 'Force email addresses validation',	// TODO - Translation
+		'force_email_validation' => 'Force email address validation',	// TODO - Translation
 		'instance-name' => 'Názov inštancie',
 		'max-categories' => 'Limit počtu kategórií pre používateľa',
 		'max-feeds' => 'Limit počtu kanálov pre používateľov',
@@ -190,6 +186,7 @@ return array(
 		'database_size' => 'Database size',	// TODO - Translation
 		'delete_users' => 'Zmazať používateľa',
 		'email' => 'Email address',	// TODO - Translation
+		'enabled' => 'Enabled',	// TODO - Translation
 		'feed_count' => 'Feeds',	// TODO - Translation
 		'is_admin' => 'Is admin',	// TODO - Translation
 		'language' => 'Jazyk',

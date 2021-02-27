@@ -65,11 +65,22 @@ return array(
 		'_' => 'Filtres utilizaires',
 		'deprecated' => 'Aqueste filtre es pas valid. La categoria o lo flux concernit es estat suprimit.',
 		'display' => 'Mostrar los resultats del filtre',
-		'filter' => 'Filtres aplicats :',
+		'filter' => array(
+			'_' => 'Filtres aplicats :',
+			'categories' => 'Display by category',	// TODO - Translation
+			'feeds' => 'Display by feed',	// TODO - Translation
+			'order' => 'Sort by date',	// TODO - Translation
+			'search' => 'Expression',	// TODO - Translation
+			'state' => 'State',	// TODO - Translation
+			'tags' => 'Display by tag',	// TODO - Translation
+			'type' => 'Type',	// TODO - Translation
+		),
 		'get_all' => 'Mostrar totes los articles',
 		'get_category' => 'Mostrar la categoria « %s »',
 		'get_favorite' => 'Mostrar los articles favorits',
 		'get_feed' => 'Mostrar lo flux « %s »',
+		'get_tag' => 'Display "%s" label',	// TODO - Translation
+		'name' => 'Name',	// TODO - Translation
 		'no_filter' => 'Cap de filtre aplicat',
 		'none' => 'Avètz pas encara creat cap de filtre.',
 		'number' => 'Filtre n°%d',
@@ -104,7 +115,7 @@ return array(
 		'auto_remove_article' => 'Rescondre los articles aprèp lectura',
 		'confirm_enabled' => 'Mostrar una confirmacion per las accions del tipe « o marcar tot coma legit »',
 		'display_articles_unfolded' => 'Mostrar los articles desplegats per defaut',
-		'display_categories_unfolded' => 'Categories to unfold',	// TODO - Translation
+		'display_categories_unfolded' => 'Categorias a desplegar',
 		'hide_read_feeds' => 'Rescondre las categorias & fluxes sens articles pas legits (fonciona pas amb la configuracion « Mostrar totes los articles »)',
 		'img_with_lazyload' => 'Utilizar lo mòde “cargament tardiu” pels imatges',
 		'jump_next' => 'sautar al vesin venent pas legit (flux o categoria)',
@@ -119,13 +130,15 @@ return array(
 		),
 		'show' => array(
 			'_' => 'Articles de mostrar',
-			'active_category' => 'Active category',	// TODO - Translation
+			'active_category' => 'Activar categoria',
 			'adaptive' => 'Adaptar l’afichatge',
 			'all_articles' => 'Mostrar totes los articles',
-			'all_categories' => 'All categories',	// TODO - Translation
-			'no_category' => 'No category',	// TODO - Translation
+			'all_categories' => 'Totas las categorias',
+			'no_category' => 'Cap de categoria',
+			'remember_categories' => 'Se remembrar de las categorias dobèrtas',
 			'unread' => 'Mostrar pas que los pas legits',
 		),
+		'show_fav_unread_help' => 'Applies also on labels',	// TODO - Translation
 		'sides_close_article' => 'Clicar fòra de la zòna de tèxte tampa l’article',
 		'sort' => array(
 			'_' => 'Òrdre de tria',
@@ -188,6 +201,7 @@ return array(
 		'skip_next_article' => 'Centrar sul seguent sens lo dobrir',
 		'skip_previous_article' => 'Centrar sul precedent sens lo dobrir',
 		'title' => 'Acorchis',
+		'toggle_media' => 'Legir/arrestar mèdia',
 		'user_filter' => 'Accedir als filtres utilizaire',
 		'user_filter_help' => 'S’i a pas qu’un filtre utilizaire, aquel serà utilizat. Autrament los filtres son accessibles per lor numèro.',
 		'views' => 'Vistas',

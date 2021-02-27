@@ -1,6 +1,8 @@
-#!/usr/bin/php
+#!/usr/bin/env php
 <?php
 require(__DIR__ . '/_cli.php');
+
+performRequirementCheck(FreshRSS_Context::$system_conf->db['type']);
 
 $params = [
 	'user:',

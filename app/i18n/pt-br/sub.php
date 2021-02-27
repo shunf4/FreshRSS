@@ -1,6 +1,7 @@
 <?php
 
 return array(
+	'add' => 'Feed and category creation has been moved <a href=\'%s\'>here</a>. It is also accessible from the menu on the left and from the ✚ icon available on the main page.',	// TODO - Translation
 	'api' => array(
 		'documentation' => 'Copie a seguinte URL para utilizar com uma ferramenta externa',
 		'title' => 'API',
@@ -16,7 +17,6 @@ return array(
 		'archiving' => 'Arquivar',
 		'empty' => 'Categoria vazia',
 		'information' => 'Informações',
-		'new' => 'Nova categoria',
 		'position' => 'Posição de exibição',
 		'position_help' => 'Para controlar a ordem de exibição',
 		'title' => 'Título',
@@ -33,6 +33,14 @@ return array(
 			'username' => 'Usuário HTTP',
 		),
 		'clear_cache' => 'Sempre limpar o cache',
+		'content_action' => array(
+			'_' => 'Content action when fetching the article content',	// TODO - Translation
+			'append' => 'Add after existing content',	// TODO - Translation
+			'prepend' => 'Add before existing content',	// TODO - Translation
+			'replace' => 'Replace existing content',	// TODO - Translation
+		),
+		'css_cookie' => 'Use Cookies when fetching the article content',	// TODO - Translation
+		'css_cookie_help' => 'Example: <kbd>foo=bar; gdpr_consent=true; cookie=value</kbd>',	// TODO - Translation
 		'css_help' => 'Retorna RSS feeds truncados (atenção, requer mais tempo!)',
 		'css_path' => 'Caminho do CSS do artigo no site original',
 		'description' => 'Descrição',
@@ -61,6 +69,8 @@ return array(
 			'main_stream' => 'Mostrar na tela principal',
 			'normal' => 'Mostrar na sua categoria',
 		),
+		'proxy' => 'Set a proxy for fetching this feed',	// TODO - Translation
+		'proxy_help' => 'Select a protocol (e.g: SOCKS5) and enter the proxy address (e.g: <kbd>127.0.0.1:1080</kbd>)',	// TODO - Translation
 		'selector_preview' => array(
 			'show_raw' => 'Mostrar fonte',
 			'show_rendered' => 'Mostrar conteúdo',
@@ -102,14 +112,28 @@ return array(
 		'title' => 'Importar / exportar',
 	),
 	'menu' => array(
+		'add' => 'Add a feed or category',	// TODO - Translation
+		'add_feed' => 'Add a feed',	// TODO - Translation
 		'bookmark' => 'Inscreva-se (FreshRSS favoritos)',
 		'import_export' => 'Importar / exportar',
+		'label_management' => 'Label management',	// TODO - Translation
 		'subscription_management' => 'Gerenciamento de inscrições',
 		'subscription_tools' => 'Ferramentas de inscrição',
 	),
+	'tag' => array(
+		'name' => 'Name',	// TODO - Translation
+		'new_name' => 'New name',	// TODO - Translation
+		'old_name' => 'Old name',	// TODO - Translation
+	),
 	'title' => array(
 		'_' => 'Gerenciamento de inscrições',
+		'add' => 'Add a feed or category',	// TODO - Translation
+		'add_category' => 'Add a category',	// TODO - Translation
+		'add_feed' => 'Add a feed',	// TODO - Translation
+		'add_label' => 'Add a label',	// TODO - Translation
+		'delete_label' => 'Delete a label',	// TODO - Translation
 		'feed_management' => 'Gerenciamento dos RSS feeds',
+		'rename_label' => 'Rename a label',	// TODO - Translation
 		'subscription_tools' => 'Ferramentas de inscrição',
 	),
 );

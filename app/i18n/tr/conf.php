@@ -11,7 +11,7 @@ return array(
 		'keep_max' => 'Maximum number of articles to keep',	// TODO - Translation
 		'keep_min_by_feed' => 'Akışta en az tutulacak makale sayısı',
 		'keep_period' => 'Maximum age of articles to keep',	// TODO - Translation
-		'keep_unreads' => 'Never delete unreads',	// TODO - Translation
+		'keep_unreads' => 'Never delete unread articles',	// TODO - Translation
 		'maintenance' => 'Maintenance',	// TODO - Translation
 		'optimize' => 'Veritabanı optimize et',
 		'optimize_help' => 'Bu işlem bazen veritabanı boyutunu düşürmeye yardımcı olur',
@@ -65,11 +65,22 @@ return array(
 		'_' => 'Kullanıcı sorguları',
 		'deprecated' => 'Bu sorgu artık geçerli değil. İlgili akış veya kategori silinmiş.',
 		'display' => 'Display user query results',	// TODO - Translation
-		'filter' => 'Filtre uygulandı:',
+		'filter' => array(
+			'_' => 'Filtre uygulandı:',
+			'categories' => 'Display by category',	// TODO - Translation
+			'feeds' => 'Display by feed',	// TODO - Translation
+			'order' => 'Sort by date',	// TODO - Translation
+			'search' => 'Expression',	// TODO - Translation
+			'state' => 'State',	// TODO - Translation
+			'tags' => 'Display by tag',	// TODO - Translation
+			'type' => 'Type',	// TODO - Translation
+		),
 		'get_all' => 'Tüm makaleleri göster',
 		'get_category' => '"%s" kategorisini göster',
 		'get_favorite' => 'Favori makaleleri göster',
 		'get_feed' => '"%s" akışını göster',
+		'get_tag' => 'Display "%s" label',	// TODO - Translation
+		'name' => 'Name',	// TODO - Translation
 		'no_filter' => 'Filtre yok',
 		'none' => 'Henüz hiç kullanıcı sorgusu oluşturmadınız.',
 		'number' => 'Sorgu n°%d',
@@ -98,7 +109,7 @@ return array(
 	'reading' => array(
 		'_' => 'Okuma',
 		'after_onread' => '"Hepsini okundu say" dedinten sonra,',
-		'always_show_favorites' => 'Show all articles in favorites by default',	// TODO - Translation
+		'always_show_favorites' => 'Show all articles in favourites by default',	// TODO - Translation
 		'articles_per_page' => 'Sayfa başına makale sayısı',
 		'auto_load_more' => 'Sayfa sonunda yeni makaleleri yükle',
 		'auto_remove_article' => 'Okuduktan sonra makaleleri gizle',
@@ -124,8 +135,10 @@ return array(
 			'all_articles' => 'Tüm makaleleri göster',
 			'all_categories' => 'All categories',	// TODO - Translation
 			'no_category' => 'No category',	// TODO - Translation
+			'remember_categories' => 'Remember open categories',	// TODO - Translation
 			'unread' => 'Sadece okunmamış makaleleri göster',
 		),
+		'show_fav_unread_help' => 'Applies also on labels',	// TODO - Translation
 		'sides_close_article' => 'Clicking outside of article text area closes the article',	// TODO - Translation
 		'sort' => array(
 			'_' => 'Sıralama',
@@ -188,6 +201,7 @@ return array(
 		'skip_next_article' => 'Focus next without opening',	// TODO - Translation
 		'skip_previous_article' => 'Focus previous without opening',	// TODO - Translation
 		'title' => 'Kısayollar',
+		'toggle_media' => 'Play/pause media',	// TODO - Translation
 		'user_filter' => 'Kullanıcı filtrelerine eriş',
 		'user_filter_help' => 'Eğer tek filtre varsa o kullanılır. Yoksa filtrelerin kendi numaralarıyla kullanılır.',
 		'views' => 'Views',	// TODO - Translation

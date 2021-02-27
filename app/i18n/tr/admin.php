@@ -67,12 +67,8 @@ return array(
 			'ok' => 'JSON eklentisi sorunsuz.',
 		),
 		'mbstring' => array(
-			'nok' => 'Cannot find the recommended library mbstring for Unicode.',	// TODO - Translation
-			'ok' => 'You have the recommended library mbstring for Unicode.',	// TODO - Translation
-		),
-		'minz' => array(
-			'nok' => 'Minz framework eksik.',
-			'ok' => 'Minz framework sorunsuz.',
+			'nok' => 'Cannot find the recommended mbstring library for Unicode.',	// TODO - Translation
+			'ok' => 'You have the recommended mbstring library for Unicode.',	// TODO - Translation
 		),
 		'pcre' => array(
 			'nok' => 'Düzenli ifadeler kütüphanesi eksik (php-pcre).',
@@ -163,7 +159,7 @@ return array(
 			'help' => 'in seconds',	// TODO - Translation
 			'number' => 'Duration to keep logged in',	// TODO - Translation
 		),
-		'force_email_validation' => 'Force email addresses validation',	// TODO - Translation
+		'force_email_validation' => 'Force email address validation',	// TODO - Translation
 		'instance-name' => 'Örnek isim',
 		'max-categories' => 'Kullanıcı başına kategori limiti',
 		'max-feeds' => 'Kullanıcı başına akış limiti',
@@ -190,6 +186,7 @@ return array(
 		'database_size' => 'Database size',	// TODO - Translation
 		'delete_users' => 'Delete user',	// TODO - Translation
 		'email' => 'Email address',	// TODO - Translation
+		'enabled' => 'Enabled',	// TODO - Translation
 		'feed_count' => 'Feeds',	// TODO - Translation
 		'is_admin' => 'Is admin',	// TODO - Translation
 		'language' => 'Dil',

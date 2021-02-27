@@ -2,7 +2,8 @@
 
 return array(
 	'action' => array(
-		'actualize' => 'Actualize',	// TODO - Translation
+		'actualize' => 'Update',	// TODO - Translation
+		'add' => 'Add',	// TODO - Translation
 		'back' => '← Go back',	// TODO - Translation
 		'back_to_rss_feeds' => '← Go back to your RSS feeds',	// TODO - Translation
 		'cancel' => 'Cancel',	// TODO - Translation
@@ -14,12 +15,14 @@ return array(
 		'export' => 'Export',	// TODO - Translation
 		'filter' => 'Filter',	// TODO - Translation
 		'import' => 'Import',	// TODO - Translation
+		'load_default_shortcuts' => 'Load default shortcuts',	// TODO - Translation
 		'manage' => 'Manage',	// TODO - Translation
 		'mark_favorite' => 'Mark as favourite',	// TODO - Translation
 		'mark_read' => 'Mark as read',	// TODO - Translation
 		'promote' => 'Promote',	// TODO - Translation
 		'purge' => 'Purge',	// TODO - Translation
 		'remove' => 'Remove',	// TODO - Translation
+		'rename' => 'Rename',	// TODO - Translation
 		'see_website' => 'See website',	// TODO - Translation
 		'submit' => 'Submit',	// TODO - Translation
 		'truncate' => 'Delete all articles',	// TODO - Translation
@@ -69,8 +72,8 @@ return array(
 		'december' => 'Dec',
 		'feb' => 'feb',
 		'february' => 'Feb',
-		'format_date' => '%s j\\<\\s\\u\\p\\>S\\<\\/\\s\\u\\p\\> Y',	// TODO - Translation
-		'format_date_hour' => '%s j\\<\\s\\u\\p\\>S\\<\\/\\s\\u\\p\\> Y \\a\\t H\\:i',	// TODO - Translation
+		'format_date' => 'j %s Y',
+		'format_date_hour' => 'j %s Y \\a\\t H\\:i',
 		'fri' => 'Fri',	// TODO - Translation
 		'jan' => 'jan',
 		'january' => 'Jan',
@@ -117,35 +120,37 @@ return array(
 		'confirm_action_feed_cat' => 'Are you sure you want to perform this action? You will lose related favorites and user queries. It cannot be cancelled!',
 		'feedback' => array(
 			'body_new_articles' => 'There are %%d new articles to read on FreshRSS.',	// TODO - Translation
-			'request_failed' => 'A request has failed, it may have been caused by Internet connection problems.',	// TODO - Translation
+			'request_failed' => 'A request has failed, it may have been caused by internet connection problems.',	// TODO - Translation
 			'title_new_articles' => 'FreshRSS: new articles!',	// TODO - Translation
 		),
-		'new_article' => 'There are new available articles, click to refresh the page.',	// TODO - Translation
+		'new_article' => 'There are new articles available, click to refresh the page.',	// TODO - Translation
 		'should_be_activated' => 'JavaScript must be enabled',	// TODO - Translation
 	),
 	'lang' => array(
-		'cz' => 'Čeština',	// TODO - Translation
-		'de' => 'Deutsch',	// TODO - Translation
-		'en' => 'English',	// TODO - Translation
-		'es' => 'Español',	// TODO - Translation
-		'fr' => 'Français',	// TODO - Translation
-		'he' => 'עברית',	// TODO - Translation
-		'it' => 'Italiano',	// TODO - Translation
-		'kr' => '한국어',	// TODO - Translation
-		'nl' => 'Nederlands',	// TODO - Translation
-		'oc' => 'Occitan',	// TODO - Translation
-		'pt-br' => 'Português (Brasil)',	// TODO - Translation
-		'ru' => 'Русский',	// TODO - Translation
-		'sk' => 'Slovenčina',	// TODO - Translation
-		'tr' => 'Türkçe',	// TODO - Translation
-		'zh-cn' => '简体中文',	// TODO - Translation
+		'cz' => 'Čeština',
+		'de' => 'Deutsch',
+		'en' => 'English',
+		'en-us' => 'English (United States)',
+		'es' => 'Español',
+		'fr' => 'Français',
+		'he' => 'עברית',
+		'it' => 'Italiano',
+		'kr' => '한국어',
+		'nl' => 'Nederlands',
+		'oc' => 'Occitan',
+		'pl' => 'Polski',
+		'pt-br' => 'Português (Brasil)',
+		'ru' => 'Русский',
+		'sk' => 'Slovenčina',
+		'tr' => 'Türkçe',
+		'zh-cn' => '简体中文',
 	),
 	'menu' => array(
 		'about' => 'About',	// TODO - Translation
 		'admin' => 'Administration',	// TODO - Translation
 		'archiving' => 'Archiving',	// TODO - Translation
 		'authentication' => 'Authentication',	// TODO - Translation
-		'check_install' => 'Installation checking',	// TODO - Translation
+		'check_install' => 'Installation check',	// TODO - Translation
 		'configuration' => 'Configuration',	// TODO - Translation
 		'display' => 'Display',	// TODO - Translation
 		'extensions' => 'Extensions',	// TODO - Translation
@@ -180,6 +185,7 @@ return array(
 	'share' => array(
 		'Known' => 'Known based sites',	// TODO - Translation
 		'blogotext' => 'Blogotext',	// TODO - Translation
+		'clipboard' => 'Clipboard',	// TODO - Translation
 		'diaspora' => 'Diaspora*',	// TODO - Translation
 		'email' => 'Email',	// TODO - Translation
 		'facebook' => 'Facebook',	// TODO - Translation
@@ -206,7 +212,7 @@ return array(
 		'default_category' => 'Uncategorized',	// TODO - Translation
 		'no' => 'No',	// TODO - Translation
 		'not_applicable' => 'Not available',	// TODO - Translation
-		'ok' => 'Ok!',	// TODO - Translation
+		'ok' => 'Okay!',	// TODO - Translation
 		'or' => 'or',	// TODO - Translation
 		'yes' => 'Yes',	// TODO - Translation
 	),

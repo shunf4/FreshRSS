@@ -3,6 +3,7 @@
 return array(
 	'action' => array(
 		'actualize' => 'Aggiorna',
+		'add' => 'Add',	// TODO - Translation
 		'back' => '← Go back',	// TODO - Translation
 		'back_to_rss_feeds' => '← Indietro',
 		'cancel' => 'Annulla',
@@ -14,12 +15,14 @@ return array(
 		'export' => 'Esporta',
 		'filter' => 'Filtra',
 		'import' => 'Importa',
+		'load_default_shortcuts' => 'Load default shortcuts',	// TODO - Translation
 		'manage' => 'Gestisci',
 		'mark_favorite' => 'Segna come preferito',
 		'mark_read' => 'Segna come letto',
 		'promote' => 'Promote',	// TODO - Translation
 		'purge' => 'Purge',	// TODO - Translation
 		'remove' => 'Rimuovi',
+		'rename' => 'Rename',	// TODO - Translation
 		'see_website' => 'Vai al sito',
 		'submit' => 'Conferma',
 		'truncate' => 'Cancella tutti gli articoli',
@@ -124,21 +127,23 @@ return array(
 		'should_be_activated' => 'JavaScript deve essere abilitato',
 	),
 	'lang' => array(
-		'cz' => 'Čeština',	// TODO - Translation
-		'de' => 'Deutsch',	// TODO - Translation
-		'en' => 'English',	// TODO - Translation
-		'es' => 'Español',	// TODO - Translation
-		'fr' => 'Français',	// TODO - Translation
-		'he' => 'עברית',	// TODO - Translation
-		'it' => 'Italiano',	// TODO - Translation
-		'kr' => '한국어',	// TODO - Translation
-		'nl' => 'Nederlands',	// TODO - Translation
-		'oc' => 'Occitan',	// TODO - Translation
-		'pt-br' => 'Português (Brasil)',	// TODO - Translation
-		'ru' => 'Русский',	// TODO - Translation
-		'sk' => 'Slovenčina',	// TODO - Translation
-		'tr' => 'Türkçe',	// TODO - Translation
-		'zh-cn' => '简体中文',	// TODO - Translation
+		'cz' => 'Čeština',
+		'de' => 'Deutsch',
+		'en' => 'English',
+		'en-us' => 'English (United States)',
+		'es' => 'Español',
+		'fr' => 'Français',
+		'he' => 'עברית',
+		'it' => 'Italiano',
+		'kr' => '한국어',
+		'nl' => 'Nederlands',
+		'oc' => 'Occitan',
+		'pl' => 'Polski',
+		'pt-br' => 'Português (Brasil)',
+		'ru' => 'Русский',
+		'sk' => 'Slovenčina',
+		'tr' => 'Türkçe',
+		'zh-cn' => '简体中文',
 	),
 	'menu' => array(
 		'about' => 'Informazioni',
@@ -180,6 +185,7 @@ return array(
 	'share' => array(
 		'Known' => 'Siti basati su Known',
 		'blogotext' => 'Blogotext',	// TODO - Translation
+		'clipboard' => 'Clipboard',	// TODO - Translation
 		'diaspora' => 'Diaspora*',	// TODO - Translation
 		'email' => 'Email',	// TODO - Translation
 		'facebook' => 'Facebook',	// TODO - Translation
