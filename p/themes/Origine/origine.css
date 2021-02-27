@@ -814,7 +814,7 @@ a.btn {
 }
 
 .flux.not_read:not(.current) {
-	background: #fff3ed;
+	/* background: #fff3ed; */
 }
 
 .flux.not_read:not(.current):hover .item.title {
