@@ -1444,7 +1444,7 @@ class SimplePie
 				return empty($this->data['mtime']) ? false : $this->data['mtime'];
 			}
 			elseif ($fetched === false) {
-				$this->error = 'Not fetched!';
+				$this->error = 'Not fetched! ' . $this->error;
 				return false;
 			}
 
