@@ -5,6 +5,7 @@
 define('FRESHRSS_MIN_PHP_VERSION', '5.6.0');
 define('FRESHRSS_VERSION', '1.17.1-dev');
 define('FRESHRSS_WEBSITE', 'https://freshrss.org');
+define('FRESHRSS_WEBSITE_BASE64', 'aHR0cHM6Ly9mcmVzaHJzcy5vcmc=');
 define('FRESHRSS_WIKI', 'https://freshrss.github.io/FreshRSS/');
 
 define('APP_NAME', 'FreshRSS');
@@ -31,7 +32,7 @@ if (file_exists(__DIR__ . '/constants.local.php')) {
 	include(__DIR__ . '/constants.local.php');
 }
 
-safe_define('FRESHRSS_USERAGENT', 'FreshRSS/' . FRESHRSS_VERSION . ' (' . PHP_OS . '; ' . FRESHRSS_WEBSITE . ')');
+safe_define('FRESHRSS_USERAGENT', 'FreeeeshRSS-shunf4/' . FRESHRSS_VERSION . ' (' . PHP_OS . '; ' . FRESHRSS_WEBSITE_BASE64 . ')');
 
 // PHP text output compression http://php.net/ob_gzhandler (better to do it at Web server level)
 safe_define('PHP_COMPRESSION', false);
