@@ -184,10 +184,12 @@ SQL;
 		}
 
 		if ($this->updateEntryPrepared === null) {
+			// shunf4: don't update date; some RSS sources (e.g. RSSHub) just returns current date when no date data is available
 			$sql = 'UPDATE `_entry` '
 				. 'SET title=:title, author=:author, '
 				. ($this->isCompressed() ? 'content_bin=COMPRESS(:content)' : 'content=:content')
-				. ', link=:link, date=:date, `lastSeen`=:last_seen, '
+				// . ', link=:link, date=:date, `lastSeen`=:last_seen, '
+				. ', link=:link, `lastSeen`=:last_seen, '
 				. 'hash=' . $this->sqlHexDecode(':hash')
 				. ', ' . ($valuesTmp['is_read'] === null ? '' : 'is_read=:is_read, ')
 				. 'tags=:tags '
@@ -209,8 +211,9 @@ SQL;
 		$valuesTmp['link'] = substr($valuesTmp['link'], 0, 1023);
 		$valuesTmp['link'] = safe_ascii($valuesTmp['link']);
 		$this->updateEntryPrepared->bindParam(':link', $valuesTmp['link']);
-		$valuesTmp['date'] = min($valuesTmp['date'], 2147483647);
-		$this->updateEntryPrepared->bindParam(':date', $valuesTmp['date'], PDO::PARAM_INT);
+		// shunf4: don't update date; some RSS sources (e.g. RSSHub) just returns current date when no date data is available
+		// $valuesTmp['date'] = min($valuesTmp['date'], 2147483647);
+		// $this->updateEntryPrepared->bindParam(':date', $valuesTmp['date'], PDO::PARAM_INT);
 		$valuesTmp['lastSeen'] = time();
 		$this->updateEntryPrepared->bindParam(':last_seen', $valuesTmp['lastSeen'], PDO::PARAM_INT);
 		if ($valuesTmp['is_read'] !== null) {
@@ -604,6 +607,7 @@ SQL;
 			$params[':keep_max'] = (int)$options['keep_max'];
 		}
 		$sql .= ')';
+		syslog(LOG_INFO, $sql);
 
 		$stm = $this->pdo->prepare($sql);
 
